@@ -10,16 +10,19 @@ function PageHome() {
   useEffect(() => {
     getPopularMovie()
       .then((data) => {
+        console.log(data);
+        debugger;
         setPopularMovies(data.results);
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
+
+  console.log(getPopularMovie);
   return (
     <main id="home">
       <MoviesContainer title="Popular Movies" moviesData={popularMovies} />
-      <MoviesContainer title="Upcoming Movies" moviesData={upcomingMovies} />
     </main>
   );
 }

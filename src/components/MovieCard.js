@@ -1,7 +1,7 @@
 function MovieCard({ movieData }) {
   return (
     <div className="movie-card">
-      <h3>{movieData}</h3>
+      <h3>{movieData.title}</h3>
     </div>
   );
 }

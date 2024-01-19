@@ -6,6 +6,7 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PageHome />} />
+        <Route path="/workshop" element={<PageHome />} />
       </Routes>
     </BrowserRouter>
   );

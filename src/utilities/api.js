@@ -13,10 +13,10 @@ function getPopularMovie() {
       if (!response.ok) {
         throw new Error("Network response was not OK");
       }
-      return response.json;
+      return response.json();
     })
     .catch((error) => {
-      throw Error;
+      throw error;
     });
 }
 
