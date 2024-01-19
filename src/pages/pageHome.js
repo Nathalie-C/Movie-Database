@@ -10,8 +10,6 @@ function PageHome() {
   useEffect(() => {
     getPopularMovie()
       .then((data) => {
-        console.log(data);
-        debugger;
         setPopularMovies(data.results);
       })
       .catch((error) => {
@@ -19,7 +17,8 @@ function PageHome() {
       });
   }, []);
 
-  console.log(getPopularMovie);
+  console.log(popularMovies);
+
   return (
     <main id="home">
       <MoviesContainer title="Popular Movies" moviesData={popularMovies} />
