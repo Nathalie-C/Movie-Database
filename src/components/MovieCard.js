@@ -1,3 +1,6 @@
+import { IMAGE_URL_BASE } from "../utilities/api";
+import { formatReleaseDate } from "../utilities/toolbelt";
+
 const defaultData = {
   adult: false,
   backdrop_path: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
@@ -17,9 +20,18 @@ const defaultData = {
 };
 
 function MovieCard({ movieData = defaultData }) {
+  const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
   return (
-    <div className="movie-card">
-      <h3>{movieData.title}</h3>
+    <div>
+      <img src={imagePath} alt={movieData.title} />
+      <div className="title-and-release">
+        <h3 className="title">{movieData.title}</h3>
+        <h4 className="releasedate">
+          {formatReleaseDate(movieData.release_date)}
+        </h4>
+        <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
+        <button className="favourite">yes </button>
+      </div>
     </div>
   );
 }
