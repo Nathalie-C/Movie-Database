@@ -17,7 +17,8 @@ function PageSingleMovie() {
         setMovieData(data);
         const youtubeTrailerVideos = filterVideos(data.videos.results);
         setMovieData(data);
-        setMovieVideos(youtubeTrailerVideos); 
+        setMovieVideos(youtubeTrailerVideos);
+      })
       .catch((error) => {
         alert(error);
       });
