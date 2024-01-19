@@ -8,4 +8,14 @@ function formatReleaseDate(date) {
   return dateObject.toLocaleDateString("en-US", options);
 }
 
-export { formatReleaseDate };
+function filterVideos(videoDataArray) {
+  //site = "Youtube"
+  //type - "Trailer"
+  return videoDataArray.filter(() => {
+    return (
+      videoDataArray.site === "Youtube" && videoDataArray.type === "Trailer"
+    );
+  });
+}
+
+export { formatReleaseDate, filterVideos };

@@ -1,5 +1,7 @@
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { formatReleaseDate } from "../utilities/toolbelt";
+import { useNavigate } from "react-router-dom";
+import FavouriteButton from "./FavoriteButton";
 
 const defaultData = {
   adult: false,
@@ -21,8 +23,14 @@ const defaultData = {
 
 function MovieCard({ movieData = defaultData }) {
   const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <div
+      onClick={() => {
+        navigate(`/movie/${movieData.id}`);
+      }}
+    >
       <img src={imagePath} alt={movieData.title} />
       <div className="title-and-release">
         <h3 className="title">{movieData.title}</h3>
@@ -30,7 +38,7 @@ function MovieCard({ movieData = defaultData }) {
           {formatReleaseDate(movieData.release_date)}
         </h4>
         <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
-        <button className="favourite">yes </button>
+        <FavouriteButton />
       </div>
     </div>
   );

@@ -21,4 +21,22 @@ function getPopularMovie() {
     });
 }
 
-export { getPopularMovie, IMAGE_URL_BASE };
+function getMovieById(movieId) {
+  return fetch(`${API_ENDPOINT}/movie/${movieId}?append_to_response=videos`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
+export { getPopularMovie, IMAGE_URL_BASE, getMovieById };
