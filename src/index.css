@@ -104,3 +104,12 @@ margin: 0.625rem;
   row-gap: 2rem;
   flex-wrap: wrap;
 }
+
+
+.favorite {
+  color: white;
+}
+
+.favorite.favorited {
+  color: red;
+}

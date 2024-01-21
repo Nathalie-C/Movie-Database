@@ -38,7 +38,7 @@ function MovieCard({ movieData = defaultData }) {
           {formatReleaseDate(movieData.release_date)}
         </h4>
         <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
-        <FavouriteButton />
+        <FavouriteButton movieData={movieData} />
       </div>
     </div>
   );

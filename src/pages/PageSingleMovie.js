@@ -14,15 +14,19 @@ function PageSingleMovie() {
   useEffect(() => {
     getMovieById(id)
       .then((data) => {
-        setMovieData(data);
+        console.log("Data", data);
+
+        console.log("safs", data.videos.results);
         const youtubeTrailerVideos = filterVideos(data.videos.results);
         setMovieData(data);
-        setMovieVideos(youtubeTrailerVideos); // Fix this line
+        setMovieVideos(youtubeTrailerVideos);
       })
       .catch((error) => {
         alert(error);
       });
   }, []);
+  console.log("movieData", movieData);
+  console.log("movieVideos", movieVideos);
 
   return (
     <div className="movie-page">
@@ -31,12 +35,17 @@ function PageSingleMovie() {
           <h1>{movieData.title}</h1>
           <div>
             <h2>{formatReleaseDate(movieData.release_date)}</h2>
-            <FavouriteButton />
+            <FavouriteButton movieData={movieData} />
 
             <p>{movieData.overview}</p>
 
             <div className="movie-videos">
-              <iframe width="600" height="600" title={movieData.name}></iframe>
+              <iframe
+                src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
+                width="600"
+                height="600"
+                title={movieData.name}
+              ></iframe>
             </div>
           </div>
         </>

@@ -11,10 +11,8 @@ function formatReleaseDate(date) {
 function filterVideos(videoDataArray) {
   //site = "Youtube"
   //type - "Trailer"
-  return videoDataArray.filter(() => {
-    return (
-      videoDataArray.site === "Youtube" && videoDataArray.type === "Trailer"
-    );
+  return videoDataArray.filter((videoData) => {
+    return videoData.site === "YouTube" && videoData.type === "Trailer";
   });
 }
 
