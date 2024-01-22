@@ -1,0 +1,30 @@
+// IMPORTS
+
+// utilities
+@use 'utilities';
+
+// base & resets
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/defaults';
+
+// components
+@use 'components/banner';
+@use 'components/buttons';
+@use 'components/carousel';
+@use 'components/dropdown';
+@use 'components/icons';
+@use 'components/movie-card';
+@use 'components/movie-grid';
+
+// layout
+@use 'layout/header';
+@use 'layout/navigation';
+@use 'layout/footer';
+@use 'layout/wrapper';
+
+// pages
+@use 'pages/about';
+@use 'pages/favourites';
+@use 'pages/home';
+@use 'pages/search';
