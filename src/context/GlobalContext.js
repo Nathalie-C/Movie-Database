@@ -4,7 +4,7 @@ export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
   function loadFromLocalStorage() {
-    const localData = localStorage.getItem("favourites");
+    const localData = localStorage.getItem("favorites");
     return localData ? JSON.parse(localData) : [];
   }
 

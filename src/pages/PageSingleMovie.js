@@ -36,9 +36,11 @@ function PageSingleMovie() {
           <div>
             <h2>{formatReleaseDate(movieData.release_date)}</h2>
             <FavouriteButton movieData={movieData} />
-
             <p>{movieData.overview}</p>
-
+            <p>{movieData.runtime}</p>
+            {movieData.genres.map((data, index) => (
+              <p>{data.name}</p>
+            ))}
             <div className="movie-videos">
               <iframe
                 src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
