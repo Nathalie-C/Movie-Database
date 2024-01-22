@@ -1,1 +1,9 @@
 @use '../utilities' as *;
+
+.favorite {
+    color: $light;
+  }
+  
+  .favorite.favorited {
+    color: $pri;
+  }
