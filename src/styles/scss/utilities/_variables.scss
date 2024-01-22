@@ -1,7 +1,6 @@
 // VARIABLES
 @use "sass:math";
-// @use 'functions' as *;
-
+@use "functions" as *;
 
 // Colors
 $pri: #f20039;
@@ -13,30 +12,27 @@ $light: #ffffff;
 
 $dark: #060b1d;
 
+$bg-li: #232945; // for header, footer, categories bg
 
 // Fonts
 $body-font: "Nunito", Arial, Helvetica, Verdana, sans-serif;
 $heading-font: "Baloo 2", Arial, Helvetica, Verdana, sans-serif;
-
 
 // Font Weights
 // $regular: 400;
 // $medium: 500;
 // $bold: 700;
 
-
 // Typographic Defaults
 $line-height: 1.5;
 
-
 // Media Query Breakpoints
 $tiny-mq: em(320);
-$small-mq:  em(640);
+$small-mq: em(640);
 $medium-mq: em(768);
 $big-mq: em(1024);
 $large-mq: em(1280);
 $huge-mq: em(1920);
 
-
 // Utility Selectors
-$link-hover-selector: '&:hover, &:focus, &:active';
+$link-hover-selector: "&:hover, &:focus, &:active";
