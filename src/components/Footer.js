@@ -8,7 +8,7 @@ export default function Footer() {
       </div>
 
       <div>
-        <FooterUrl href="">
+        {/* <FooterUrl href="">
           <p>HOME</p>
         </FooterUrl>
         <FooterUrl href="">
@@ -16,13 +16,13 @@ export default function Footer() {
         </FooterUrl>
         <FooterUrl href="">
           <p>FAVOURITES</p>
-        </FooterUrl>
+        </FooterUrl> */}
       </div>
       <p>&#169; 2024 Arielle M., John S., Nathalie C.</p>
     </div>
   );
 }
 
-function FooterUrl(props){
-  <a href
-}
+// function FooterUrl(props){
+//   <a href
+// }
