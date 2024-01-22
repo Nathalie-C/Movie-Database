@@ -23,7 +23,7 @@ function FavouriteButton({ movieData }) {
       onClick={handleFavorite}
       className={`favorite ${isFavorited ? "favorited" : ""}`}
     >
-      yes
+      placeholder
     </button>
   );
 }
