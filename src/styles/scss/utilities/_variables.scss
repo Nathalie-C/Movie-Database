@@ -2,6 +2,10 @@
 @use "sass:math";
 @use "functions" as *;
 
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
 // Colors
 $pri: #f20039;
 $pri-li: #fb4a74;
@@ -11,6 +15,7 @@ $sec: #232945; // for header, footer, categories bg
 $light: #ffffff;
 
 $dark: #060b1d;
+
 
 // Fonts
 $body-font: "Nunito", Arial, Helvetica, Verdana, sans-serif;
