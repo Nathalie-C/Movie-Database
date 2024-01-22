@@ -1,1 +1,5 @@
-@use 'utilities' as *;
+@use "utilities" as *;
+
+.footer {
+  background-color: $bg-li;
+}

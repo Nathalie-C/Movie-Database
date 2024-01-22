@@ -1,20 +1,28 @@
 export default function Footer() {
   return (
-    <div>
-      <img src="" alt=""></img>
-      <h3>guMDrop</h3>
+    <div className="footer">
       <div>
-        <a href="">
-          <p>HOME</p>
-        </a>
-        <a href="">
-          <p>ABOUT</p>
-        </a>
-        <a href="">
-          <p>FAVOURITES</p>
-        </a>
+        {/* logo */}
+        <img src="" alt="Website logo"></img>
+        <h3>guMDrop</h3>
       </div>
-      <p>&#169; 2023 Arielle M., John S., Nathalie C.</p>
+
+      <div>
+        <FooterUrl href="">
+          <p>HOME</p>
+        </FooterUrl>
+        <FooterUrl href="">
+          <p>ABOUT</p>
+        </FooterUrl>
+        <FooterUrl href="">
+          <p>FAVOURITES</p>
+        </FooterUrl>
+      </div>
+      <p>&#169; 2024 Arielle M., John S., Nathalie C.</p>
     </div>
   );
+}
+
+function FooterUrl(props){
+  <a href
 }
