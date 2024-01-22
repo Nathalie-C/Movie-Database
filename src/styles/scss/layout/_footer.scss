@@ -2,4 +2,31 @@
 
 .footer {
   background-color: $sec;
+  color: $light;
+  .footer-nav a {
+    color: $light;
+  }
+
+  .footer-nav {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .footer-logo-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  // 768px
+  @media (min-width: $medium-mq) {
+    .footer-1st-part {
+      display: flex;
+      gap: 4rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .copyright p {
+      text-align: center;
+    }
+  }
 }

@@ -382,8 +382,39 @@ p {
   font-size: 1.125rem;
 }
 
+.carousel *,
+.carousel *:before,
+.carousel *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 .footer {
   background-color: #232945;
+  color: #ffffff;
+}
+.footer .footer-nav a {
+  color: #ffffff;
+}
+.footer .footer-nav {
+  list-style-type: none;
+  padding-left: 0;
+}
+.footer .footer-logo-group {
+  display: flex;
+  gap: 1rem;
+}
+@media (min-width: 48em) {
+  .footer .footer-1st-part {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .copyright p {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
