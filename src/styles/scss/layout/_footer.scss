@@ -3,8 +3,10 @@
 .footer {
   background-color: $sec;
   color: $light;
+
   .footer-nav a {
     color: $light;
+    text-decoration: none;
   }
 
   .footer-nav {
@@ -18,7 +20,7 @@
   }
 
   // 768px
-  @media (min-width: $medium-mq) {
+  @include mq( $medium-mq ) {
     .footer-1st-part {
       display: flex;
       gap: 4rem;
