@@ -8,3 +8,10 @@ body {
     background-color: $dark;
     color: $light;
 }
+
+:target:before {
+    content: "";
+    display: block;
+    height: 2rem;
+    margin: -2rem 0 0;
+}
