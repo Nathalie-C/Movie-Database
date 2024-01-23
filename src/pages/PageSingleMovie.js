@@ -49,6 +49,14 @@ function PageSingleMovie() {
             {movieData.genres.map((data, index) => (
               <p>{data.name}</p>
             ))}
+            {movieData.credits.cast.map((data, index) => (
+              <div>
+                <p>
+                  {data.name} as {data.character}
+                </p>
+              </div>
+            ))}
+
             <div className="movie-videos">
               <iframe
                 src={`https://www.youtube.com/embed/${movieVideos[0].key}`}

@@ -1,5 +1,16 @@
 @use '../utilities' as *;
 
+// site logo
+.site-logo {
+    fill: $pri;
+}
+
+.site-logo:hover{
+    color: $pri-li;
+    fill: $pri-li;
+  }
+
+// favourites
 .favorite {
     color: $light;
   }
@@ -7,3 +18,5 @@
   .favorite.favorited {
     color: $pri;
   }
+
+// rating
