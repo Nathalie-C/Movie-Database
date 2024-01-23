@@ -8,11 +8,11 @@ export default function CarouselBanner({ moviesData }) {
 
   console.log("Pop1: ", moviesData);
 
-  function heroLoop(moviesData) {
-    for (let i = 0; i < moviesData.length; i++) {
-      return <CarouselSlide key={moviesData[i].id} movieData={moviesData[i]} />;
-    }
-  }
+  // function heroLoop(moviesData) {
+  //   for (let i = 0; i < moviesData.length; i++) {
+  //     return <CarouselSlide key={moviesData[i].id} movieData={moviesData[i]} />;
+  //   }
+  // }
 
   return (
     <Carousel
@@ -23,11 +23,12 @@ export default function CarouselBanner({ moviesData }) {
       transitionTime={2500}
       interval={5000}
     >
-      {heroLoop(moviesData)}
-      {/* <CarouselSlide movieData={moviesData[0]} />
+      {/* {heroLoop(moviesData)} */}
+      <CarouselSlide movieData={moviesData[0]} />
       <CarouselSlide movieData={moviesData[1]} />
       <CarouselSlide movieData={moviesData[2]} />
-      <CarouselSlide movieData={moviesData[3]} /> */}
+      <CarouselSlide movieData={moviesData[3]} />
+      <CarouselSlide movieData={moviesData[4]} />
     </Carousel>
   );
 }
