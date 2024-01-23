@@ -1,12 +1,17 @@
 @use "../utilities" as *;
 
-.footer {
+footer {
   background-color: $sec;
   color: $light;
+
+    p {
+        margin: 0;
+    }
 
   .footer-nav a {
     color: $light;
     text-decoration: none;
+    text-transform: uppercase;
   }
 
   .footer-nav {
@@ -16,7 +21,13 @@
 
   .footer-logo-group {
     display: flex;
+    align-items: center;
     gap: 1rem;
+  }
+
+  .footer-logo-group:hover{
+    color: $pri-li;
+    fill: $pri-li;
   }
 
   // 768px
