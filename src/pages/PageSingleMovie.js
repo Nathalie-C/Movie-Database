@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { filterVideos, formatReleaseDate } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavoriteButton";
 import Banner from "../components/Banner";
-import Footer from "../components/Footer";
 import { IMAGE_URL_BASE } from "../utilities/api";
 
 function PageSingleMovie() {

@@ -1,13 +1,10 @@
 import Banner from "../components/Banner";
-import Footer from "../components/Footer";
+import aboutImg from "../images/header-slider-img-01.jpg";
 
 export default function PageAbout() {
   return (
     <div>
-      <Banner
-        src="../images/header-slider-img-01.jpg"
-        alt="about banner image"
-      />
+      <Banner src={aboutImg} alt="about banner image" />
       <h1>guMDrop</h1>
       <h2>The sweetest way to find movies!</h2>
       <p>

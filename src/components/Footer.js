@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer>
       <div className="footer-1st-part">
-        <a className="footer-logo-group site-logo">
-          {/* logo */}
+        <Link to="/" className="footer-logo-group site-logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="36"
@@ -13,17 +14,17 @@ export default function Footer() {
             <path d="M256.742 37C407.512 37 501.293 355.711 501.293 355.711C531.717 408.289 493.682 474 432.826 474H79.1676C18.3185 474 -19.717 408.289 10.7069 355.711C10.7069 355.711 91.2167 37 256.742 37Z"></path>
           </svg>
           <h3>guMDrop</h3>
-        </a>
+        </Link>
 
         <ul className="footer-nav">
           <li>
-            <a href="../pages/PageHome.js">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="../pages/PageAbout.js">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="../pages/PageFavourites.js">FAVOURITES</a>
+            <Link to="/favourites">Favourites</Link>
           </li>
         </ul>
       </div>

@@ -22,6 +22,7 @@ function PageHome() {
     getPopularMovie()
       .then((data) => {
         setPopularMovies(data.results);
+        // console.log("data: ", data);
       })
       .catch((error) => {
         console.log(error);
@@ -61,8 +62,7 @@ function PageHome() {
 
   return (
     <main id="home">
-      <CarouselBanner className="carouselBanner" moviesData={popularMovies} />
-      {/* {console.log(popularMovies)} */}
+      <CarouselBanner moviesData={popularMovies} />
       <CategoryMenu
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
