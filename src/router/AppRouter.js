@@ -8,6 +8,7 @@ import PageFavourites from "../pages/PageFavourites";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ErrorPage from "../pages/ErrorPage";
+import SearchResults from "../pages/SearchResults";
 
 function AppRouter() {
   return (
@@ -21,6 +22,7 @@ function AppRouter() {
           <Route path="/workshop" element={<WorkShop />} />
           <Route path="/favourites" element={<PageFavourites />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/searchResults" element={<SearchResults />} />
         </Routes>
         <Footer />
       </GlobalProvider>
