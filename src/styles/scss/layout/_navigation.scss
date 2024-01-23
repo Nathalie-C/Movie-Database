@@ -1,1 +1,112 @@
 @use '../utilities' as *;
+
+// menu button
+.menu-toggle {
+    display: inline-block;
+    background-color: transparent;
+    border: 0;
+}
+  
+  // .menu-toggle:focus {
+  //   border: 0;
+  //   outline: 0.125rem solid $pri;
+  // }
+  
+.menu-toggle svg path {
+    stroke: $light;
+    stroke-width: 0.25rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: right center;
+    transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
+}
+  
+.site-navigation.toggled .menu-toggle svg path:first-of-type {
+    rotate: -45deg;
+    translate: 0.1rem -0.21rem;
+} 
+  // note: if space between lines is smaller, then this^ value becomes more negative; vice versa if space is larger (previous value was -0.24rem)
+  
+.site-navigation.toggled .menu-toggle svg path:last-of-type {
+    rotate: 45deg;
+    translate: 0.1rem 0.24rem;
+}
+  
+.site-navigation.toggled .menu-toggle svg path:nth-of-type(2) {
+    opacity: 0;
+    width: 0;
+}
+  
+.site-navigation ul {
+    background-color: $sec;
+    display: none;
+    height: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    position: absolute;
+    width: 80%;
+    z-index: 90; 
+    right:0;
+    top: 4rem;
+}
+  
+  
+.site-navigation.toggled ul {
+    display: block;
+    // flex-direction: column;
+    height: 100vh;
+}
+  
+.site-navigation a {
+    color: $light;
+    background-color: $sec;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.25rem;
+    display: block;
+}
+  
+/* navigation links */
+nav a:hover,
+nav a:focus,
+nav a:active {
+    background-color: $pri;
+}
+  
+nav a:focus {
+    border: 0.125rem solid $pri;
+}
+
+
+
+@include mq($medium-mq) {
+    nav a {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-navigation {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .site-navigation ul {
+        display: flex;
+        position: static;
+        align-items: center;
+        top: 0;
+        height: 4rem;
+        width: auto;
+    }
+
+    .site-navigation a {
+        height: 4rem;
+    }
+}
