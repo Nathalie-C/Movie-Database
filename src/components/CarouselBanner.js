@@ -1,19 +1,11 @@
+// The carousel section is modified from https://github.com/leandrowd/react-responsive-carousel?tab=readme-ov-file
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import CarouselSlide from "./CarouselSlide";
 
 export default function CarouselBanner({ moviesData }) {
-  // The carousel section is modified from https://github.com/leandrowd/react-responsive-carousel?tab=readme-ov-file
-
-  console.log("Pop1: ", moviesData);
-
-  // function heroLoop(moviesData) {
-  //   for (let i = 0; i < moviesData.length; i++) {
-  //     return <CarouselSlide key={moviesData[i].id} movieData={moviesData[i]} />;
-  //   }
-  // }
-
+  // console.log("Pop1: ", moviesData);
   return (
     <Carousel
       showThumbs={false}
@@ -23,7 +15,6 @@ export default function CarouselBanner({ moviesData }) {
       transitionTime={2500}
       interval={5000}
     >
-      {/* {heroLoop(moviesData)} */}
       <CarouselSlide movieData={moviesData[0]} />
       <CarouselSlide movieData={moviesData[1]} />
       <CarouselSlide movieData={moviesData[2]} />

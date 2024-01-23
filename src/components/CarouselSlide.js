@@ -9,11 +9,6 @@ export default function CarouselSlide({ movieData }) {
 
   return (
     <div className="carousel-slide">
-      <img
-        className="carousel-img"
-        src={imagePath + movieData.backdrop_path}
-        alt={movieData.title}
-      />
       <div className="carousel-text">
         <h1>{movieData.title}</h1>
         <p> {formatReleaseDate(movieData.release_date)}</p>
@@ -26,6 +21,13 @@ export default function CarouselSlide({ movieData }) {
           More Info
         </button>
       </div>
+
+      <div className="carousel-gradient"></div>
+      <img
+        className="carousel-img"
+        src={imagePath + movieData.backdrop_path}
+        alt={movieData.title}
+      />
     </div>
   );
 }

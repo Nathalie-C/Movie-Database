@@ -4,6 +4,16 @@
   .carousel-slide {
     position: relative;
 
+    .carousel-gradient {
+      width: 100vw;
+      height: 550px;
+      background-image: linear-gradient(to right, #000000, transparent);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
     .carousel-img {
       height: 550px;
       object-fit: cover;
@@ -25,6 +35,7 @@
     .control-arrow {
       padding: 52px;
       opacity: 0.5;
+      width: 10rem;
     }
   }
 }
