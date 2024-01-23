@@ -8,7 +8,6 @@ import {
 import { useEffect } from "react";
 import MoviesContainer from "../components/MoviesContainer";
 import CarouselBanner from "../components/CarouselBanner";
-import Footer from "../components/Footer";
 import CategoryMenu from "../components/CategoryMenu";
 
 function PageHome() {
@@ -85,7 +84,6 @@ function PageHome() {
           moviesData={nowPlayingMovies}
         />
       )}
-      <Footer />
     </main>
   );
 }
