@@ -1,105 +1,71 @@
-export default function CarouselBanner({ popularMovies }) {
-  // The carousel section is modified from https://github.com/dangvanthanh/carousel.sass?tab=readme-ov-file
-  // console.log(popularMovies);
-  //every 3 secs, force a click on input "carousel-dot"
+import carouselImg01 from "../images/header-slider-img-01.jpg";
+import carouselImg02 from "../images/header-slider-img-02.jpg";
+import carouselImg03 from "../images/header-slider-img-03.jpg";
+import { IMAGE_URL_BASE } from "../utilities/api";
+import { formatReleaseDate } from "../utilities/toolbelt";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import CreateExcerpt from "./CreateExcerpt";
 
-  // const radioInputs = document.querySelectorAll(".carousel-dot");
-  // const labels = document.querySelectorAll(".carousel__nav label");
-
-  // const CAROUSEL_DELAY = 5000;
-
-  // let activeCarouselIndex = 0;
-  // let timeoutID;
-  // setTimeout(autoShowSlides, CAROUSEL_DELAY);
-
-  // function autoShowSlides() {
-  //   activeCarouselIndex++;
-  //   // console.log(activeCarouselIndex);
-  //   radioInputs[activeCarouselIndex].click();
-
-  //   if (activeCarouselIndex === radioInputs.length - 1) {
-  //     activeCarouselIndex = -1;
-  //   }
-
-  //   // Change image every 3 seconds
-  //   timeoutID = setTimeout(autoShowSlides, CAROUSEL_DELAY);
-  // }
-
-  // for (let i = 0; i < labels.length; i++) {
-  //   labels[i].addEventListener("click", function () {
-  //     clearTimeout(timeoutID);
-  //     activeCarouselIndex = i;
-  //     if (activeCarouselIndex === radioInputs.length - 1) {
-  //       activeCarouselIndex = -1;
-  //     }
-
-  //     timeoutID = setTimeout(autoShowSlides, CAROUSEL_DELAY);
-  //   });
-  // }
+export default function CarouselBanner({ moviesData }) {
+  // The carousel section is modified from https://github.com/leandrowd/react-responsive-carousel?tab=readme-ov-file
+  const imagePath = `${IMAGE_URL_BASE}/w1920`;
+  // imagePath + moviesData[0].poster_path
+  console.log("Pop: ", moviesData[0]);
 
   return (
-    <div className="carousel">
-      <input
-        type="radio"
-        id="carousel-1"
-        className="carousel-dot"
-        name="carousel[]"
-        checked
-      />
-      <input
-        type="radio"
-        id="carousel-2"
-        className="carousel-dot"
-        name="carousel[]"
-      />
-      <input
-        type="radio"
-        id="carousel-3"
-        className="carousel-dot"
-        name="carousel[]"
-      />
+    <Carousel
+      showThumbs={false}
+      showStatus={false}
+      autoPlay={true}
+      infiniteLoop={true}
+      transitionTime={2500}
+      interval={5000}
+    >
+      {/* <div className="carousel-slide">
+        <img src={carouselImg01} alt={moviesData[0].title} />
+        <div className="carousel-text">
+          <h1>{moviesData[0].title}</h1>
+          <p> {formatReleaseDate(moviesData[0].release_date)}</p>
+          <CreateExcerpt
+            content={moviesData[0].overview}
+            maxNumberOfWords={50}
+          />
+          <button>More Info</button>
+        </div>
+      </div> */}
 
-      <ul className="carousel__items">
-        <li className="carousel__item">
-          <img
-            src="../images/header-slider-img-01.jpg"
-            alt="Carousel background"
-            className="carousel__img"
-          />
-        </li>
-        <li className="carousel__item">
-          <img
-            src="../images/header-slider-img-02.jpg"
-            alt="Carousel background"
-            className="carousel__img"
-          />
-        </li>
-        <li className="carousel__item">
-          <img
-            src="../images/header-slider-img-03.jpg"
-            alt="Carousel background"
-            className="carousel__img"
-          />
-        </li>
-      </ul>
-
-      <div className="carousel__prev">
-        <label for="carousel-1"></label>
-        <label for="carousel-2"></label>
-        <label for="carousel-3"></label>
+      <div className="carousel-slide">
+        <img src={carouselImg02} alt="" />
+        <div className="carousel-text">
+          <h1>Movie title</h1>
+          <p>2023-05-24</p>
+          <p>dddddd</p>
+          <CreateExcerpt content="Carol Danvers i , ojdof kok." />
+        </div>
       </div>
 
-      <div className="carousel__next">
-        <label for="carousel-1"></label>
-        <label for="carousel-2"></label>
-        <label for="carousel-3"></label>
+      <div className="carousel-slide">
+        <img src={carouselImg03} alt="" />
+        <div className="carousel-text">
+          <h1>Movie title</h1>
+          <p>2023-05-24</p>
+          <p>dddddd</p>
+          <button>more</button>
+        </div>
       </div>
 
-      <div className="carousel__nav">
-        <label for="carousel-1"></label>
-        <label className="carousel-label" for="carousel-2"></label>
-        <label for="carousel-3"></label>
+      <div className="carousel-slide">
+        <img src={carouselImg03} alt="" />
+        <div className="carousel-text">
+          <h1>Movie title</h1>
+          <p>2023-05-24</p>
+          <p>dddddd</p>
+          <button>more</button>
+        </div>
       </div>
-    </div>
+    </Carousel>
   );
 }

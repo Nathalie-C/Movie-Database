@@ -4,9 +4,9 @@ footer {
   background-color: $sec;
   color: $light;
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 
   .footer-nav a {
     color: $light;
@@ -23,15 +23,18 @@ footer {
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: $light;
+    text-decoration: none;
   }
 
-  .footer-logo-group:hover{
+  .footer-logo-group:hover,
+  .footer-nav a:hover {
     color: $pri-li;
     fill: $pri-li;
   }
 
   // 768px
-  @include mq( $medium-mq ) {
+  @include mq($medium-mq) {
     .footer-1st-part {
       display: flex;
       gap: 4rem;
