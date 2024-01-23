@@ -62,7 +62,10 @@ function PageHome() {
 
   return (
     <main id="home">
-      <CarouselBanner moviesData={popularMovies} />
+      {popularMovies.length > 0 && (
+        <CarouselBanner moviesData={popularMovies} />
+      )}
+
       <CategoryMenu
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -70,14 +73,12 @@ function PageHome() {
       {selectedCategory === "popular" && (
         <MoviesContainer title="Popular Movies" moviesData={popularMovies} />
       )}
-
       {selectedCategory === "top-rated" && (
         <MoviesContainer title="Top Rated Movies" moviesData={topRatedMovies} />
       )}
       {selectedCategory === "upcoming" && (
         <MoviesContainer title="Upcoming Movies" moviesData={upcomingMovies} />
       )}
-
       {selectedCategory === "now-playing" && (
         <MoviesContainer
           title="Now Playing Movies"

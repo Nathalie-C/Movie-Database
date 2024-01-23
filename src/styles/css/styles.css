@@ -430,14 +430,22 @@ button.outline:focus {
 .carousel .carousel-slide {
   position: relative;
 }
-.carousel .carousel-text {
+.carousel .carousel-slide .carousel-img {
+  height: 550px;
+  object-fit: cover;
+  object-position: 0 25%;
+}
+.carousel .carousel-slide .carousel-text {
   position: absolute;
-  top: 13rem;
-  left: 15rem;
+  top: 4rem;
+  left: 5rem;
   right: auto;
+  width: 20rem;
+  text-align: left;
+  z-index: 200;
 }
 .carousel .carousel-slider .control-arrow {
-  padding: 45px;
+  padding: 52px;
   opacity: 0.5;
 }
 
