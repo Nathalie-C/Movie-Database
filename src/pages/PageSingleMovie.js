@@ -35,7 +35,7 @@ function PageSingleMovie() {
       {movieData && (
         <>
           <Banner
-            src={`https://image.tmdb.org/t/p${movieData.poster_pat}`}
+            src={`${IMAGE_URL_BASE}/w1280${movieData.backdrop_path}`}
             alt={movieData.title}
           />
 

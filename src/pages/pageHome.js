@@ -62,7 +62,7 @@ function PageHome() {
 
   return (
     <main id="home">
-      <CarouselBanner moviesData={popularMovies} />
+      {/* <CarouselBanner moviesData={popularMovies} /> */}
       <CategoryMenu
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
