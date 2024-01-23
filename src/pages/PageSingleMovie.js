@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { filterVideos, formatReleaseDate } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavoriteButton";
 import Banner from "../components/Banner";
+import { IMAGE_URL_BASE } from "../utilities/api";
+import { formatRuntime } from "../utilities/toolbelt";
 
 function PageSingleMovie() {
   const params = useParams();
@@ -26,8 +28,6 @@ function PageSingleMovie() {
         alert(error);
       });
   }, []);
-  console.log("movieData", movieData);
-  console.log("movieVideos", movieVideos);
 
   return (
     <div className="movie-page">
@@ -35,25 +35,35 @@ function PageSingleMovie() {
       {movieData && (
         <>
           <Banner
-            src={`https://image.tmdb.org/t/p${movieData.poster_pat}`}
+            src={`${IMAGE_URL_BASE}/w1280${movieData.backdrop_path}`}
             alt={movieData.title}
           />
-          <h1>{movieData.title}</h1>
-          <div>
-            <h2>{formatReleaseDate(movieData.release_date)}</h2>
-            <FavouriteButton movieData={movieData} />
-            <p>{movieData.overview}</p>
-            <p>{movieData.runtime}</p>
-            {movieData.genres.map((data, index) => (
-              <p>{data.name}</p>
-            ))}
-            {movieData.credits.cast.map((data, index) => (
-              <div>
-                <p>
-                  {data.name} as {data.character}
-                </p>
+
+          <main className="movie-page-main">
+            <h1>{movieData.title}</h1>
+            <div className="release-date-and-duration">
+              <p>
+                {formatReleaseDate(movieData.release_date)} -{" "}
+                {formatRuntime(movieData.runtime)}
+              </p>
+            </div>
+
+            <div className="rating-and-favourite">
+              <div className="rating-bar">
+                <p>{movieData.vote_average.toFixed(1).replace(".", "")}%</p>
               </div>
-            ))}
+              <FavouriteButton movieData={movieData} />
+            </div>
+
+            <div className="genre-list">
+              {movieData.genres.map((data, index) => (
+                <p>{data.name}</p>
+              ))}
+            </div>
+
+            <p>{movieData.overview}</p>
+
+            <h2>Trailer</h2>
 
             <div className="movie-videos">
               <iframe
@@ -63,7 +73,22 @@ function PageSingleMovie() {
                 title={movieData.name}
               ></iframe>
             </div>
-          </div>
+            <h2>Cast List</h2>
+            <div className="cast-list" style={{ overflowX: "auto" }}>
+              {movieData.credits.cast.slice(0, 7).map((cast, index) => (
+                <div className="cast-card">
+                  <img
+                    src={`${IMAGE_URL_BASE}/w185${cast.profile_path}`}
+                    alt={cast.name}
+                  />
+                  <div className="cast-text">
+                    <h3>{cast.name}</h3>
+                    <p>{cast.character}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </main>
         </>
       )}
     </div>

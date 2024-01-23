@@ -16,4 +16,12 @@ function filterVideos(videoDataArray) {
   });
 }
 
-export { formatReleaseDate, filterVideos };
+function formatRuntime(runtime) {
+  if (runtime < 60) {
+    return runtime + "m";
+  } else {
+    return Math.floor(runtime / 60) + "h " + (runtime % 60) + "m";
+  }
+}
+
+export { formatReleaseDate, filterVideos, formatRuntime };
