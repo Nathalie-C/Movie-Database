@@ -61,8 +61,8 @@ function PageHome() {
 
   return (
     <main id="home">
-      <CarouselBanner moviesData={popularMovies} />
-      {console.log(popularMovies)}
+      <CarouselBanner className="carouselBanner" moviesData={popularMovies} />
+      {/* {console.log(popularMovies)} */}
       <CategoryMenu
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}

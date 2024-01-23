@@ -4,6 +4,7 @@ import { getMovieById } from "../utilities/api";
 import { useEffect } from "react";
 import { filterVideos, formatReleaseDate } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavoriteButton";
+import Banner from "../components/Banner";
 
 function PageSingleMovie() {
   const params = useParams();
@@ -30,8 +31,13 @@ function PageSingleMovie() {
 
   return (
     <div className="movie-page">
+      {console.log("Movie Data: ", movieData)}
       {movieData && (
         <>
+          <Banner
+            src={`https://image.tmdb.org/t/p${movieData.poster_pat}`}
+            alt={movieData.title}
+          />
           <h1>{movieData.title}</h1>
           <div>
             <h2>{formatReleaseDate(movieData.release_date)}</h2>

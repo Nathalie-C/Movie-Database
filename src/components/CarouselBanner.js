@@ -38,54 +38,66 @@ export default function CarouselBanner({ popularMovies }) {
   // }
 
   return (
-    <div class="carousel">
+    <div className="carousel">
       <input
         type="radio"
         id="carousel-1"
-        class="carousel-dot"
+        className="carousel-dot"
         name="carousel[]"
         checked
       />
       <input
         type="radio"
         id="carousel-2"
-        class="carousel-dot"
+        className="carousel-dot"
         name="carousel[]"
       />
       <input
         type="radio"
         id="carousel-3"
-        class="carousel-dot"
+        className="carousel-dot"
         name="carousel[]"
       />
 
-      <ul class="carousel__items">
-        <li class="carousel__item">
-          <img src="" alt="" />
+      <ul className="carousel__items">
+        <li className="carousel__item">
+          <img
+            src="../images/header-slider-img-01.jpg"
+            alt="Carousel background"
+            className="carousel__img"
+          />
         </li>
-        {/* <li class="carousel__item">
-           <img src="images/header-slider-img-02.jpg" alt="Carousel background image of a technician working" />
-         </li>
-         <li class="carousel__item">
-           <img src="images/header-slider-img-03.jpg" alt="Carousel background image of two technicians working" />
-         </li> */}
+        <li className="carousel__item">
+          <img
+            src="../images/header-slider-img-02.jpg"
+            alt="Carousel background"
+            className="carousel__img"
+          />
+        </li>
+        <li className="carousel__item">
+          <img
+            src="../images/header-slider-img-03.jpg"
+            alt="Carousel background"
+            className="carousel__img"
+          />
+        </li>
       </ul>
 
-      <div class="carousel__prev">
+      <div className="carousel__prev">
         <label for="carousel-1"></label>
         <label for="carousel-2"></label>
         <label for="carousel-3"></label>
       </div>
 
-      <div class="carousel__next">
+      <div className="carousel__next">
         <label for="carousel-1"></label>
         <label for="carousel-2"></label>
         <label for="carousel-3"></label>
       </div>
 
-      <div class="carousel__nav">
+      <div className="carousel__nav">
         <label for="carousel-1"></label>
-        <label class="carousel-label" for="carousel-2"></label>
+        <label className="carousel-label" for="carousel-2"></label>
         <label for="carousel-3"></label>
       </div>
     </div>
