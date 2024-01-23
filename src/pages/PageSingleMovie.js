@@ -68,7 +68,6 @@ function PageSingleMovie() {
           </div>
         </>
       )}
-      <Footer />
     </div>
   );
 }

@@ -15,7 +15,6 @@ function PageFavourites() {
           <MovieCard key={favorite.id} movieData={favorite} />
         ))}
       </main>
-      <Footer />
     </div>
   );
 }
