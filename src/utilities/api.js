@@ -108,6 +108,24 @@ function getMovieById(movieId) {
     });
 }
 
+function getMovieBySearch(query) {
+  return fetch(`${API_ENDPOINT}/search/movie?query=${query}`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
 export {
   getPopularMovie,
   IMAGE_URL_BASE,
@@ -115,4 +133,5 @@ export {
   getTopRated,
   getUpcoming,
   getNowPlaying,
+  getMovieBySearch,
 };
