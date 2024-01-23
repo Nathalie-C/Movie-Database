@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { filterVideos, formatReleaseDate } from "../utilities/toolbelt";
 import FavouriteButton from "../components/FavoriteButton";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
+import { IMAGE_URL_BASE } from "../utilities/api";
 
 function PageSingleMovie() {
   const params = useParams();
@@ -35,7 +37,7 @@ function PageSingleMovie() {
       {movieData && (
         <>
           <Banner
-            src={`https://image.tmdb.org/t/p${movieData.poster_pat}`}
+            src={`${IMAGE_URL_BASE}/w185${movieData.poster_path}`}
             alt={movieData.title}
           />
           <h1>{movieData.title}</h1>
@@ -58,6 +60,7 @@ function PageSingleMovie() {
           </div>
         </>
       )}
+      <Footer />
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Footer() {
             <a href="../pages/PageAbout.js">ABOUT</a>
           </li>
           <li>
-            <a href="#">FAVOURITES</a>
+            <a href="../pages/PageFavourites.js">FAVOURITES</a>
           </li>
         </ul>
       </div>
