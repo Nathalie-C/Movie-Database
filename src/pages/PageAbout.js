@@ -22,7 +22,6 @@ export default function PageAbout() {
       <p>
         This product uses the TMDb API but is not endorsed or certified by TMDb.
       </p>
-      <Footer />
     </div>
   );
 }
