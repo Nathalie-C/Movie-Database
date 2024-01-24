@@ -109,12 +109,15 @@ function getMovieById(movieId) {
 }
 
 function getMovieBySearch(query) {
-  return fetch(`${API_ENDPOINT}/search/movie?query=${query}`, {
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${API_TOKEN}`,
-    },
-  })
+  return fetch(
+    `${API_ENDPOINT}/search/movie?query=${query}&include_adult=false`,
+    {
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${API_TOKEN}`,
+      },
+    }
+  )
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not OK");
