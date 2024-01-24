@@ -8,6 +8,10 @@ footer {
     margin: 0;
   }
 
+  .footer-wrapper {
+    padding: 1rem;
+  }
+
   .footer-nav a {
     color: $light;
     text-decoration: none;
@@ -17,6 +21,11 @@ footer {
   .footer-nav {
     list-style-type: none;
     padding-left: 0;
+    margin: 1.5rem 0;
+  }
+
+  .footer-nav-link {
+    margin: 0.4rem 0;
   }
 
   .footer-logo-group {
@@ -25,12 +34,17 @@ footer {
     gap: 1rem;
     color: $light;
     text-decoration: none;
+    padding: 0;
   }
 
   .footer-logo-group:hover,
   .footer-nav a:hover {
     color: $pri-li;
     fill: $pri-li;
+  }
+
+  .copyright p {
+    font-size: 1rem;
   }
 
   // 768px
@@ -43,6 +57,28 @@ footer {
     }
     .copyright p {
       text-align: center;
+    }
+  }
+
+  // 1024px
+  @include mq($big-mq) {
+    .footer-logo-group h3 {
+      font-size: 1.5rem;
+    }
+  }
+
+  // 1280px
+  @include mq($large-mq) {
+    .footer-nav-link {
+      margin: 0.7rem 0;
+    }
+
+    .footer-wrapper {
+      padding: 1.5rem 0;
+    }
+
+    .copyright {
+      margin: 1rem 0;
     }
   }
 }

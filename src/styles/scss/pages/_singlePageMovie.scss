@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+.movie-page {
+  .banner-img img {
+    object-position: 0 10%;
+  }
+}
+
 .movie-page-main {
   margin: 0 1rem;
 }

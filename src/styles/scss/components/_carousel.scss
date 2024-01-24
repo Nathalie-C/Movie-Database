@@ -6,7 +6,7 @@
 
     .carousel-gradient {
       width: 100vw;
-      height: 550px;
+      height: 20rem;
       background-image: linear-gradient(to right, #000000, transparent);
       position: absolute;
       top: 0;
@@ -15,27 +15,283 @@
     }
 
     .carousel-img {
-      height: 550px;
+      height: 20rem;
       object-fit: cover;
-      object-position: 0 25%;
+      object-position: 50% 25%;
     }
 
     .carousel-text {
       position: absolute;
-      top: 4rem;
-      left: 5rem;
+      top: 3rem;
+      left: 2.8rem;
       right: auto;
-      width: 20rem;
+      width: 13rem;
       text-align: left;
       z-index: 200;
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .carousel-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9em;
+      }
+
+      .excerpt {
+        display: none;
+      }
     }
   }
 
-  .carousel-slider {
-    .control-arrow {
-      padding: 52px;
-      opacity: 0.5;
-      width: 10rem;
+  // arrows
+  button.control-prev::after {
+    content: "\00276E";
+    padding-left: 0.3rem;
+  }
+  button.control-next::after {
+    content: "\00276F";
+    padding-left: 0.3rem;
+  }
+  button.control-prev.control-arrow,
+  button.control-next.control-arrow {
+    opacity: 0.7;
+  }
+  button.control-prev.control-arrow::before {
+    border-right: 0 solid transparent;
+    display: none;
+  }
+  button.control-next.control-arrow::before {
+    border-left: 0 solid transparent;
+    display: none;
+  }
+
+  //bottom dots
+  .control-dots {
+    display: none;
+  }
+
+  //640px
+  @include mq($small-mq) {
+    .carousel-slide {
+      .carousel-gradient,
+      .carousel-img {
+        height: 22rem;
+      }
+
+      .carousel-text {
+        top: 4rem;
+        left: 5rem;
+        width: 18rem;
+
+        h1 {
+          font-size: 1.7em;
+        }
+
+        .carousel-btn {
+          padding: 0.7rem 1rem;
+        }
+      }
+    }
+    // arrows
+    button.control-prev::after {
+      padding-left: 0.5rem;
+    }
+    button.control-next::after {
+      padding-right: 0.5rem;
+    }
+  }
+
+  //768px
+  @include mq($medium-mq) {
+    .carousel-slide {
+      .carousel-gradient,
+      .carousel-img {
+        height: 27rem;
+      }
+
+      .carousel-text {
+        top: 2rem;
+        left: 5rem;
+        width: 20rem;
+
+        h1 {
+          font-size: 1.9em;
+        }
+
+        p {
+          font-size: 1.1em;
+        }
+
+        .carousel-btn {
+          padding: 0.7rem 1.3rem;
+          font-size: 1em;
+        }
+
+        .excerpt {
+          display: block;
+        }
+      }
+    }
+    // arrows
+    button.control-prev::after {
+      padding-left: 0.9rem;
+      font-size: 2rem;
+    }
+    button.control-next::after {
+      padding-right: 0.9rem;
+      font-size: 2rem;
+    }
+  }
+
+  //1280px
+  @include mq($large-mq) {
+    .carousel-slide {
+      .carousel-gradient,
+      .carousel-img {
+        height: 31rem;
+      }
+
+      .carousel-text {
+        top: 3.5rem;
+        left: 7rem;
+        width: 24rem;
+
+        h1 {
+          font-size: 2.1em;
+        }
+
+        p {
+          font-size: 1.2em;
+        }
+
+        .carousel-btn {
+          padding: 0.7rem 1.4rem;
+          margin-top: 0.8rem;
+        }
+      }
+    }
+    // bottom dots
+    ul.control-dots {
+      display: block;
+      bottom: 0.9rem;
+
+      li.dot {
+        width: 0.7rem;
+        height: 0.7rem;
+        box-shadow: none;
+      }
+
+      li.dot.selected {
+        opacity: 0.7;
+      }
+    }
+    // arrows
+    button.control-prev::after {
+      padding-left: 1rem;
+      font-size: 2.3rem;
+    }
+    button.control-next::after {
+      padding-right: 1rem;
+      font-size: 2.3rem;
+    }
+  }
+
+  //1600px
+  @include mq(100em) {
+    .carousel-slide {
+      .carousel-gradient {
+        height: 35rem;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .carousel-img {
+        height: 35rem;
+        object-position: 50% 25%;
+      }
+
+      .carousel-text {
+        top: 3.6rem;
+        left: 9rem;
+        width: 28rem;
+        h1 {
+          font-size: 2.4em;
+        }
+
+        p {
+          font-size: 1.4em;
+        }
+
+        .carousel-btn {
+          padding: 0.8rem 1.6rem;
+          margin-top: 0.8rem;
+          font-size: 1.3em;
+        }
+      }
+    }
+    // arrows
+    button.control-prev::after {
+      padding-left: 1.5rem;
+      font-size: 2.8rem;
+    }
+    button.control-next::after {
+      padding-right: 1.5rem;
+      font-size: 2.8rem;
+    }
+  }
+  //1800px
+  @include mq(112.5em) {
+    .carousel-slide {
+      .carousel-gradient {
+        height: 38rem;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .carousel-img {
+        height: 38rem;
+        object-position: 50% 25%;
+      }
+
+      .carousel-text {
+        top: 3.6rem;
+        left: 9rem;
+        width: 32rem;
+        h1 {
+          font-size: 2.6em;
+        }
+
+        p {
+          font-size: 1.5em;
+        }
+
+        .carousel-btn {
+          padding: 0.8rem 1.7rem;
+          margin-top: 0.8rem;
+          font-size: 1.3em;
+        }
+      }
+    }
+    // arrows
+    button.control-prev::after {
+      padding-left: 1.8rem;
+      font-size: 3rem;
+    }
+    button.control-next::after {
+      padding-right: 1.8rem;
+      font-size: 3rem;
+    }
+    // bottom dots
+    ul.control-dots {
+      bottom: 0.95rem;
+
+      li.dot {
+        width: 0.91rem;
+        height: 0.91rem;
+      }
     }
   }
 }

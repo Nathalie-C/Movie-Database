@@ -12,8 +12,9 @@ export default function CarouselSlide({ movieData }) {
       <div className="carousel-text">
         <h1>{movieData.title}</h1>
         <p> {formatReleaseDate(movieData.release_date)}</p>
-        <CreateExcerpt content={movieData.overview} maxNumberOfWords={40} />
+        <CreateExcerpt content={movieData.overview} maxNumberOfWords={35} />
         <button
+          className="carousel-btn"
           onClick={() => {
             navigate(`/movie/${movieData.id}`);
           }}

@@ -1,1 +1,51 @@
-@use '../utilities' as *;
+@use "../utilities" as *;
+
+.about {
+  img {
+    object-position: 0 40%;
+  }
+
+  .about-text {
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .about-heading {
+    color: $pri;
+  }
+
+  // 768px
+  @include mq($medium-mq) {
+    .about-text {
+      padding: 2rem 4rem;
+    }
+  }
+
+  // 1024px
+  @include mq($big-mq) {
+    .about-text {
+      padding: 2rem 7rem 3rem 7rem;
+    }
+  }
+
+  // 1280px
+  @include mq($large-mq) {
+    .about-text {
+      padding: 3rem 10rem 5.5rem 10rem;
+    }
+  }
+
+  //1600px
+  @include mq(100em) {
+    .about-text {
+      padding: 3.5rem 14rem 6rem 14rem;
+    }
+  }
+
+  //1800px
+  @include mq(112.5em) {
+    .about-text {
+      padding: 3.5rem 16rem 6rem 16rem;
+    }
+  }
+}
