@@ -1,0 +1,37 @@
+@use "../utilities" as *;
+
+.error-page {
+  text-align: center;
+  padding-top: 1rem;
+
+  h1 {
+    color: $pri;
+  }
+
+  h2 {
+    padding-bottom: 3rem;
+  }
+
+  // 640px
+  @include mq($small-mq) {
+    padding-top: 1.5rem;
+
+    h2 {
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  // 768px
+  @include mq($medium-mq) {
+    padding-top: 0;
+    h2 {
+      padding-bottom: 8rem;
+    }
+  }
+  // 1280px
+  @include mq($large-mq) {
+    h2 {
+      padding-bottom: 14rem;
+    }
+  }
+}
