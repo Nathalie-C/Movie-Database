@@ -1,6 +1,6 @@
 function CategoryMenu({ setSelectedCategory }) {
   return (
-    <div className="droDownContainer">
+    <div className="dropDownContainer">
       <button
         onClick={() => {
           setSelectedCategory("popular");

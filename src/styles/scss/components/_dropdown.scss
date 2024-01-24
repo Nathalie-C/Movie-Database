@@ -1,1 +1,13 @@
 @use '../utilities' as *;
+
+.dropDownContainer {
+    background-color: $sec;
+    padding: 1rem;
+    margin: 1rem auto;
+    display: inline-block;
+    border-radius: 0.5rem;
+}
+
+.dropDownContainer button {
+    margin: 0 0.5rem;
+}
