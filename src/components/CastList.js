@@ -3,30 +3,34 @@ import { IMAGE_URL_BASE } from "../utilities/api";
 export default function CastList({ movieData }) {
   // output cast photo
   let imgAlt = "";
-  let castCards = [];
-  const casts = movieData.credits.cast.slice(0, 7);
-  for (let i = 0; i < casts.length; i++) {
-    if (casts[i].profile_path === null) {
+  const casts = movieData.credits.cast.slice(0, 11);
+
+  let castCards = casts.map((cast, i) => {
+    if (cast.profile_path === null) {
       imgAlt = "Photo not available";
     } else {
-      imgAlt = casts[i].name;
+      imgAlt = cast.name;
     }
 
-    castCards.push(
-      <div key={i}>
+    return (
+      <div key={`${i}-${casts.name}`}>
         <div className="cast-card">
           <img
-            src={`${IMAGE_URL_BASE}/w185${casts[i].profile_path}`}
+            src={`${IMAGE_URL_BASE}/w185${cast.profile_path}`}
             alt={imgAlt}
           />
           <div className="cast-text">
-            <h3>{casts[i].name}</h3>
-            <p>{casts[i].character}</p>
+            <h3>{cast.name}</h3>
+            <p>{cast.character}</p>
           </div>
         </div>
       </div>
     );
-  }
+  });
 
-  return castCards;
+  if (castCards.length > 0) {
+    return castCards;
+  } else {
+    return <p>No cast available.</p>;
+  }
 }
