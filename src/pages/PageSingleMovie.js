@@ -56,32 +56,39 @@ function PageSingleMovie() {
       {/* {console.log("Movie Data: ", movieData)} */}
       {movieData && (
         <>
-          <Banner
-            src={`${IMAGE_URL_BASE}/w1280${movieData.backdrop_path}`}
-            alt={`Banner of ${movieData.title}`}
-          />
-
+          {movieData.backdrop_path && (
+            <Banner
+              src={`${IMAGE_URL_BASE}/w1280${movieData.backdrop_path}`}
+              alt={`Banner of ${movieData.title}`}
+            />
+          )}
           <main className="movie-page-main">
             <div className="single-movie-info">
-              <div className="poster-container">
-                <div className="poster-carrier">
-                  <div className="poster-gradient" />
-                  <img
-                    className="single-page-poster"
-                    src={`${IMAGE_URL_BASE}/w1280${movieData.poster_path}`}
-                    alt={`Poster of ${movieData.title}`}
-                  />
+              {movieData.poster_path && (
+                <div className="poster-container">
+                  <div className="poster-carrier">
+                    <div className="poster-gradient" />
+                    <img
+                      className="single-page-poster"
+                      src={`${IMAGE_URL_BASE}/w1280${movieData.poster_path}`}
+                      alt={`Poster of ${movieData.title}`}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="single-movie-text">
                 <div className="movie-title-container">
                   <h1 className="movie-title">{movieData.title}</h1>
                   <div className="rating-and-favourite">
                     <div className="rating-bar">
-                      <p>
-                        {movieData.vote_average.toFixed(1).replace(".", "")}%
-                      </p>
+                      {movieData.vote_average ? (
+                        <p>
+                          {movieData.vote_average.toFixed(1).replace(".", "")}%
+                        </p>
+                      ) : (
+                        <p>NR</p>
+                      )}
                     </div>
                     <FavouriteButton
                       className="fav-btn"
@@ -92,15 +99,24 @@ function PageSingleMovie() {
 
                 <div className="movie-text-container">
                   <div className="release-date-and-duration">
-                    <p>
-                      {formatReleaseDate(movieData.release_date)} -{" "}
-                      {formatRuntime(movieData.runtime)}
-                    </p>
+                    {movieData.release_date || movieData.runtime ? (
+                      <p>
+                        {formatReleaseDate(movieData.release_date)} -{" "}
+                        {formatRuntime(movieData.runtime)}
+                      </p>
+                    ) : (
+                      <p>No movie data available </p>
+                    )}
                   </div>
                   <div className="genre-list">
                     <p>{genreArr.join(", ")}</p>
                   </div>
-                  <p className="overview">{movieData.overview}</p>
+
+                  {!movieData.overview ? (
+                    <p className="error-message-data">Overview not available</p>
+                  ) : (
+                    <p className="overview">{movieData.overview}</p>
+                  )}
                 </div>
               </div>
             </div>

@@ -2,7 +2,6 @@ import { IMAGE_URL_BASE } from "../utilities/api";
 import { formatReleaseDate } from "../utilities/toolbelt";
 import { useNavigate } from "react-router-dom";
 import FavouriteButton from "./FavoriteButton";
-
 const defaultData = {
   adult: false,
   backdrop_path: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
@@ -34,14 +33,25 @@ function MovieCard({ movieData = defaultData }) {
       <img src={imagePath} alt={movieData.title} />
       <div className="title-and-release">
         <h3 className="title">{movieData.title}</h3>
-        <h4 className="releasedate">
-          {formatReleaseDate(movieData.release_date)}
-        </h4>
-        <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
-
-        <p>
-          Description <a>More</a>
-        </p>
+        {movieData.release_date && (
+          <h4 className="release-date">
+            {formatReleaseDate(movieData.release_date)}
+          </h4>
+        )}
+        {movieData.vote_average ? (
+          <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
+        ) : (
+          <h4>No Rating</h4>
+        )}
+        {movieData.overview ? (
+          <p>
+            {movieData.overview.trim().substring(0, 80)}... <a>More</a>
+          </p>
+        ) : (
+          <p>
+            No Description Available <a>More</a>
+          </p>
+        )}
         <FavouriteButton movieData={movieData} />
       </div>
     </div>
