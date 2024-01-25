@@ -1,5 +1,10 @@
 @use '../utilities' as *;
 
+svg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 // site logo
 .site-logo {
   fill: $pri;
@@ -8,17 +13,45 @@
 }
 
 .site-logo:hover{
-    color: $pri-li;
-    fill: $pri-li;
-  }
+  color: $pri-li;
+  fill: $pri-li;
+}
+
+
+// menu button
+.menu-toggle {
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+}
+
+// .menu-toggle:focus {
+//   border: 0;
+//   outline: 0.125rem solid $pri;
+// }
+
+.menu-toggle svg path {
+  stroke: $light;
+  stroke-width: 0.25rem;
+  transform-origin: right center;
+  transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
+}
+
 
 // favourites
-.favorite {
-    color: $light;
-  }
-  
-  .favorite.favorited {
-    color: $pri;
-  }
+button.favorite {
+  fill: $sec;
+  stroke: $light;
+  stroke-width: 0.125rem;
+  background-color: transparent;
+  padding: 0;
+}
 
-// rating
+button:hover .favorite {
+  stroke: $pri-li;
+}
+
+button.favorite.favorited {
+  fill: $pri;
+  stroke: $pri;
+}

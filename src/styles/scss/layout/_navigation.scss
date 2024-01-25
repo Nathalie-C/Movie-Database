@@ -1,25 +1,4 @@
 @use '../utilities' as *;
-
-// menu button
-.menu-toggle {
-    display: inline-block;
-    background-color: transparent;
-    border: 0;
-}
-  
-  // .menu-toggle:focus {
-  //   border: 0;
-  //   outline: 0.125rem solid $pri;
-  // }
-  
-.menu-toggle svg path {
-    stroke: $light;
-    stroke-width: 0.25rem;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transform-origin: right center;
-    transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
-}
   
 .site-navigation.toggled .menu-toggle svg path:first-of-type {
     rotate: -45deg;
