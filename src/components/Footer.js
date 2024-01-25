@@ -16,18 +16,19 @@ export default function Footer() {
             </svg>
             <h3>guMDrop</h3>
           </Link>
-
-          <ul className="footer-nav">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li className="footer-nav-link">
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/favourites">Favourites</Link>
-            </li>
-          </ul>
+          <nav>
+            <ul className="footer-nav">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li className="footer-nav-link">
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/favourites">Favourites</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         <div className="copyright">

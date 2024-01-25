@@ -198,7 +198,7 @@
   }
 
   //1600px
-  @include mq(100em) {
+  @include mq(1600px) {
     .carousel-slide {
       .carousel-gradient {
         height: 35rem;
@@ -242,7 +242,7 @@
     }
   }
   //1800px
-  @include mq(112.5em) {
+  @include mq(1800px) {
     .carousel-slide {
       .carousel-gradient {
         height: 38rem;
