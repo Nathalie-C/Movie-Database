@@ -1,0 +1,41 @@
+@use '../utilities' as *;
+
+.search label {
+    display: none;
+}
+
+.search form {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+}
+
+.search input {
+    display: none;
+    height: 2.875rem;
+    min-width: 12rem;
+    border: 0.125rem solid $light;
+    border-radius: 2rem;
+    background-color: $dark;
+    padding: 0.125rem 1rem;
+}
+
+.search input:focus {
+    outline: 0.125rem solid $pri;
+    outline-offset: -0.1875rem;
+}
+
+.search button {
+    position: absolute;
+}
+
+.search.toggled input {
+    display: block;
+}
+
+@include mq($medium-mq) {
+    .search input {
+        display: block;
+    }
+}

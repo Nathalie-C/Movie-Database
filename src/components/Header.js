@@ -18,9 +18,10 @@ export default function Header() {
         <p>guMDrop</p>
       </Link>
 
-      <SearchBar />
-
-      <Nav />
+      <div className="nav-icons">
+        <SearchBar />
+        <Nav />
+      </div>
     </header>
   );
 }

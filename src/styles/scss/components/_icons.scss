@@ -64,6 +64,33 @@ button.currentCategory svg path {
   fill: transparent;
   stroke: $light;
   stroke-width: 0.25rem;
-  transform-origin: center center;
-  transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
+  // transform-origin: center center;
+  // transition: rotate $animation-timing, translate $animation-timing;
+}
+
+
+// search
+.search svg path {
+  fill: transparent;
+  stroke: $light;
+  stroke-width: 0.25rem;
+  // transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
+}
+.search button {
+  background-color: transparent;
+}
+
+button.search {
+  padding: 0;
+  height: 4rem;
+  width: 4rem;
+}
+
+button:hover .favorite {
+  stroke: $pri-li;
+}
+
+button.favorite.favorited {
+  fill: $pri;
+  stroke: $pri;
 }
