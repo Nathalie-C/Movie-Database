@@ -71,17 +71,17 @@ function PageHome() {
         setSelectedCategory={setSelectedCategory}
       />
       {selectedCategory === "popular" && (
-        <MoviesContainer title="Popular Movies" moviesData={popularMovies} />
+        <MoviesContainer title="Popular" moviesData={popularMovies} />
       )}
       {selectedCategory === "top-rated" && (
-        <MoviesContainer title="Top Rated Movies" moviesData={topRatedMovies} />
+        <MoviesContainer title="Top Rated" moviesData={topRatedMovies} />
       )}
       {selectedCategory === "upcoming" && (
-        <MoviesContainer title="Upcoming Movies" moviesData={upcomingMovies} />
+        <MoviesContainer title="Upcoming" moviesData={upcomingMovies} />
       )}
       {selectedCategory === "now-playing" && (
         <MoviesContainer
-          title="Now Playing Movies"
+          title="Now Playing"
           moviesData={nowPlayingMovies}
         />
       )}

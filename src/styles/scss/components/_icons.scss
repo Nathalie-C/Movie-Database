@@ -57,3 +57,13 @@ button.favorite.favorited {
   fill: $pri;
   stroke: $pri;
 }
+
+
+// dropdown menu arrow
+button.currentCategory svg path {
+  fill: transparent;
+  stroke: $light;
+  stroke-width: 0.25rem;
+  transform-origin: center center;
+  transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing;
+}

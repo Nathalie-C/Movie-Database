@@ -1,13 +1,75 @@
 @use '../utilities' as *;
 
-.dropDownContainer {
-    background-color: $sec;
-    padding: 1rem;
-    margin: 1rem auto;
-    display: inline-block;
-    border-radius: 0.5rem;
+// .outline = not selected
+
+.currentCategory {
+    background-color: transparent;
+    text-transform: none;
+    text-align: left;
+    border-radius: 0;
+    border-bottom: 0.125rem solid $sec;
+    min-width: 10rem;
+    padding: 0;
+    margin: 1rem 1rem 0 1rem;
+    display: flex;
 }
 
-.dropDownContainer button {
-    margin: 0 0.5rem;
+button.currentCategory:hover ,
+button.currentCategory:focus  
+{
+    background-color: transparent;
+}
+
+.currentCategory h1{
+    margin: 0 1rem 0.25rem 0;
+}
+
+.dropdownContainer{
+    display: none;
+    background-color: $sec;
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    text-align: right;
+    // position: absolute;
+    width: 100%;
+    z-index: 90; 
+    right:0;
+    top: 4rem;
+}
+
+.categoryMenu.toggled .dropdownContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdownContainer button.outline {
+    box-shadow: none;
+}
+
+@include mq($medium-mq) {
+    .currentCategory {
+        display: none;
+    }
+
+    .dropdownContainer {
+        display: flex;
+        background-color: $sec;
+        padding: 1rem;
+        margin: 1rem auto;
+        display: block;
+        width: max-content;
+        border-radius: 0.5rem;
+    }
+    
+    .dropdownContainer button {
+        margin: 0 0.5rem;
+        min-width: 10rem;
+    }
+
+    .dropdownContainer button.outline {
+        box-shadow: inset 0.25rem 0.25rem $pri,
+                    inset -0.25rem -0.25rem $pri,
+                    inset 0.25rem -0.25rem $pri,
+                    inset -0.25rem 0.25rem $pri;
+    }
 }
