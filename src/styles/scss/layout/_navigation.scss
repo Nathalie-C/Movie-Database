@@ -60,6 +60,10 @@ nav a:focus {
     border: 0.125rem solid $pri;
 }
 
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
 
 
 @include mq($medium-mq) {
@@ -83,6 +87,11 @@ nav a:focus {
         top: 0;
         height: 4rem;
         width: auto;
+    }
+
+    .site-navigation.toggled ul {
+        display: flex;
+        height: 3rem;
     }
 
     .site-navigation a {
