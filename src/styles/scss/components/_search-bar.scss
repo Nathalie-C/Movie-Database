@@ -13,11 +13,12 @@
 
 .search input {
     display: none;
+    color: $light;
+    background-color: $dark;
     height: 2.875rem;
     min-width: 12rem;
     border: 0.125rem solid $light;
     border-radius: 2rem;
-    background-color: $dark;
     padding: 0.125rem 1rem;
 }
 
