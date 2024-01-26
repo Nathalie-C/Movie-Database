@@ -43,7 +43,7 @@ button.currentCategory:focus
 }
 
 .dropdownContainer button.outline {
-    box-shadow: none;
+    outline: none;
 }
 
 @include mq($medium-mq) {
@@ -67,9 +67,7 @@ button.currentCategory:focus
     }
 
     .dropdownContainer button.outline {
-        box-shadow: inset 0.25rem 0.25rem $pri,
-                    inset -0.25rem -0.25rem $pri,
-                    inset 0.25rem -0.25rem $pri,
-                    inset -0.25rem 0.25rem $pri;
+        outline: 0.25rem solid $pri;
+        outline-offset: -0.25rem;
     }
 }
