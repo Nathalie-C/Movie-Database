@@ -52,7 +52,7 @@ function PageSingleMovie() {
         </iframe>
       );
     } else {
-      return <p>I am sorry, this movie does not have a trailer available.</p>;
+      return <p>Sorry, this movie does not have a trailer available.</p>;
     }
   }
 
