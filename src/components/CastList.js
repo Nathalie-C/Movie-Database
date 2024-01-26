@@ -1,4 +1,5 @@
 import { IMAGE_URL_BASE } from "../utilities/api";
+import castErrorImg from "../images/cast-error-img.webp";
 
 export default function CastList({ movieData }) {
   // output cast photo
@@ -18,6 +19,11 @@ export default function CastList({ movieData }) {
           <img
             src={`${IMAGE_URL_BASE}/w185${cast.profile_path}`}
             alt={imgAlt}
+            onError={(e) => {
+              let currentTarget = e.currentTarget;
+              currentTarget.onerror = null; // prevents looping
+              currentTarget.src = castErrorImg;
+            }}
           />
           <div className="cast-text">
             <h3>{cast.name}</h3>

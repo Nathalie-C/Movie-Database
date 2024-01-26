@@ -58,13 +58,25 @@ div.rating-bar {
   margin-top: 2rem;
 }
 
-.movie-page>div {
+.movie-page > div {
   margin-bottom: 0.6rem;
 }
 
 .movie-page p {
   margin-bottom: 0.3rem;
   margin-top: 0.3rem;
+}
+.cast-overlay-container {
+  position: relative;
+  .cast-gradient {
+    width: 10%;
+    height: 100%;
+    background-image: linear-gradient(to left, #000000, transparent);
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+  }
 }
 
 .cast-list div {
@@ -175,6 +187,11 @@ div.rating-bar {
     .movie-title {
       margin-bottom: 0;
     }
+
+    .movie-videos iframe {
+      width: 90%;
+      height: 27rem;
+    }
   }
 }
 
@@ -194,6 +211,16 @@ div.rating-bar {
 
     .single-movie-text {
       margin-left: 2rem;
+    }
+  }
+}
+
+// 1280px
+@include mq($large-mq) {
+  .movie-page {
+    .movie-videos iframe {
+      width: 90%;
+      height: 32rem;
     }
   }
 }
@@ -268,6 +295,11 @@ div.rating-bar {
       .movie-title {
         font-size: 3.5rem;
       }
+    }
+
+    .movie-videos iframe {
+      width: 90%;
+      height: 37rem;
     }
   }
 }

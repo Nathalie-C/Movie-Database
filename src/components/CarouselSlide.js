@@ -23,7 +23,7 @@ export default function CarouselSlide({ movieData }) {
         </button>
       </div>
 
-      <div className="carousel-gradient"></div>
+      <div className="carousel-gradient" />
       <img
         className="carousel-img"
         src={imagePath + movieData.backdrop_path}

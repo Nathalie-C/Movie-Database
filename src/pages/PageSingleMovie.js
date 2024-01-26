@@ -44,7 +44,12 @@ function PageSingleMovie() {
           width="600"
           height="300"
           title={movieData.name}
-        ></iframe>
+          frameborder="0"
+          allow="fullscreen; picture-in-picture"
+          allowfullscreen
+        >
+          Your browser does not support embedded frames (iframes)
+        </iframe>
       );
     } else {
       return <p>I am sorry, this movie does not have a trailer available.</p>;
@@ -125,8 +130,11 @@ function PageSingleMovie() {
             <div className="movie-videos">{outputTrailer()}</div>
             <div className="cast-container">
               <h2>Cast List</h2>
-              <div className="cast-list" style={{ overflowX: "auto" }}>
-                <CastList movieData={movieData} />
+              <div className="cast-overlay-container">
+                <div className="cast-gradient" />
+                <div className="cast-list" style={{ overflowX: "auto" }}>
+                  <CastList movieData={movieData} />
+                </div>
               </div>
             </div>
           </main>
