@@ -31,7 +31,6 @@ button.currentCategory:focus
     margin: 0 1rem;
     text-align: right;
     // position: absolute;
-    width: 100%;
     z-index: 90; 
     right:0;
     top: 4rem;
@@ -49,6 +48,9 @@ button.currentCategory:focus
 @include mq($medium-mq) {
     .currentCategory {
         display: none;
+    }
+    .categoryMenu.toggled .dropdownContainer{
+        flex-direction: row;
     }
 
     .dropdownContainer {
