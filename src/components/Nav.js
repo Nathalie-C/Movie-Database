@@ -25,12 +25,11 @@ export default function Nav() {
 
             {/* ul of nav links */}
             <ul className="nav-menu" id="header-menu">
-                <li>PLACEHOLDER search bar</li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about" onClick={() => menuHandle()} >About</Link>
                 </li>
                 <li>
-                    <Link to="/favourites">Favourites</Link>
+                    <Link to="/favourites" onClick={() => menuHandle()}>Favourites</Link>
                 </li>
             </ul>
         </nav>
