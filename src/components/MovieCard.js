@@ -22,6 +22,7 @@ const defaultData = {
 
 function MovieCard({ movieData = defaultData }) {
   const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
+  // const imagePath = `${IMAGE_URL_BASE}/w342${movieData.poster_path}`;
   const navigate = useNavigate();
 
   return (
@@ -29,20 +30,18 @@ function MovieCard({ movieData = defaultData }) {
       onClick={() => {
         navigate(`/movie/${movieData.id}`);
       }}
+      className="movie-card"
     >
       <img src={imagePath} alt={movieData.title} />
-      <div className="title-and-release">
-        <h3 className="title">{movieData.title}</h3>
-        {movieData.release_date && (
-          <h4 className="release-date">
-            {formatReleaseDate(movieData.release_date)}
-          </h4>
-        )}
-        {movieData.vote_average ? (
-          <h4 className="vote-average">{movieData.vote_average.toFixed(1)}</h4>
-        ) : (
-          <h4>No Rating</h4>
-        )}
+      <div className="movie-info">
+        <div className="title-and-release">
+          <h3 className="title">{movieData.title}</h3>
+          {movieData.release_date && (
+            <p className="release-date">
+              {formatReleaseDate(movieData.release_date)}
+            </p>
+          )}
+        </div>
         {movieData.overview ? (
           <p>
             {movieData.overview.trim().substring(0, 80)}... <a>More</a>
@@ -52,7 +51,16 @@ function MovieCard({ movieData = defaultData }) {
             No Description Available <a>More</a>
           </p>
         )}
-        <FavouriteButton movieData={movieData} />
+        <div className="card-icons">
+          <div className="rating-bar">
+            {movieData.vote_average ? (
+              <p>{movieData.vote_average.toFixed(1)}</p>
+            ) : (
+              <p>No Rating</p>
+            )}
+          </div>
+          <FavouriteButton movieData={movieData} />
+        </div>
       </div>
     </div>
   );
