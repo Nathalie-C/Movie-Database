@@ -129,6 +129,17 @@ div.rating-bar {
   font-size: 1rem;
 }
 
+.movie-videos {
+  border: 3px solid $pri;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+.movie-videos iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 // 768px
 @include mq($medium-mq) {
   .movie-page {
@@ -187,11 +198,6 @@ div.rating-bar {
     .movie-title {
       margin-bottom: 0;
     }
-
-    .movie-videos iframe {
-      width: 90%;
-      height: 27rem;
-    }
   }
 }
 
@@ -216,14 +222,6 @@ div.rating-bar {
 }
 
 // 1280px
-@include mq($large-mq) {
-  .movie-page {
-    .movie-videos iframe {
-      width: 90%;
-      height: 32rem;
-    }
-  }
-}
 
 // 1600px
 @include mq(1600px) {
@@ -295,11 +293,6 @@ div.rating-bar {
       .movie-title {
         font-size: 3.5rem;
       }
-    }
-
-    .movie-videos iframe {
-      width: 90%;
-      height: 37rem;
     }
   }
 }

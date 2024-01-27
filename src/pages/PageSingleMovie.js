@@ -41,8 +41,6 @@ function PageSingleMovie() {
       return (
         <iframe
           src={`https://www.youtube.com/embed/${movieVideos[0].key}`}
-          width="600"
-          height="300"
           title={movieData.name}
           frameborder="0"
           allow="fullscreen; picture-in-picture"
