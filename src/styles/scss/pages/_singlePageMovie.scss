@@ -33,13 +33,14 @@ div.rating-bar {
   align-items: center;
   height: 3rem;
   width: 3rem;
-  border: 0.375rem solid $light;
+  border: 0.25rem solid $light;
   border-radius: 50%;
   margin: 0;
 }
 
 .rating-bar p {
   line-height: 0;
+  font-size: 1rem;
 }
 
 .genre-list {

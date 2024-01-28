@@ -50,14 +50,14 @@
 }
   
 /* navigation links */
-nav a:hover,
-nav a:focus,
-nav a:active {
+header nav a:hover,
+header nav a:focus,
+header nav a:active {
     background-color: $pri;
 }
   
-nav a:focus {
-    border: 0.125rem solid $pri;
+header nav a:focus {
+    outline: 0.125rem solid $pri;
 }
 
 .nav-icons {

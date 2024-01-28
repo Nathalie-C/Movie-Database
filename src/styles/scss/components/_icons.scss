@@ -80,10 +80,15 @@ button.currentCategory svg path {
   background-color: transparent;
 }
 
+.search button svg {
+  height: 2rem;
+  width: 2rem;
+}
+
 button.search {
   padding: 0;
-  height: 4rem;
-  width: 4rem;
+  // height: 4rem;
+  // width: 4rem;
 }
 
 button:hover .favorite {

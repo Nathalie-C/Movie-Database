@@ -16,6 +16,7 @@ body {
     margin: -2rem 0 0;
 }
 
+// links
 a,
 a:visited {
     color: $pri;
@@ -28,7 +29,7 @@ a:focus {
 }
 
 a:focus {
-    border: 2px solid $pri-li;
+    outline: 2px solid $pri-li;
 }
 
 a:active {

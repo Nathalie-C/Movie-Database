@@ -13,12 +13,23 @@ footer {
   }
 
   .footer-nav a {
+    display: inline-block;
     color: $light;
     text-decoration: none;
     text-transform: uppercase;
   }
 
-  .footer-nav {
+  .footer-nav a:hover,
+  .footer-nav a:focus,
+  .footer-nav a:active {
+    background-color: $pri;
+  }
+    
+  .footer-nav a:focus {
+    outline: 0.125rem solid $pri;
+  }
+
+  .footer-nav ul {
     list-style-type: none;
     padding-left: 0;
     margin: 1.5rem 0;
@@ -37,8 +48,7 @@ footer {
     padding: 0;
   }
 
-  .footer-logo-group:hover,
-  .footer-nav a:hover {
+  .footer-logo-group:hover {
     color: $pri-li;
     fill: $pri-li;
   }
