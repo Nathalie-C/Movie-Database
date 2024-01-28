@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PageHome from "../pages/pageHome";
+import PageHome from "../pages/PageHome";
 import WorkShop from "../pages/WorkShop";
 import PageSingleMovie from "../pages/PageSingleMovie";
 import { GlobalProvider } from "../context/GlobalContext";
