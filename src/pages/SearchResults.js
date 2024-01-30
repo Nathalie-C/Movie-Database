@@ -29,10 +29,10 @@ function SearchResults() {
   } else {
     return (
       <main>
-        <h1>
+        <h2>
           Dang you should find better movies, your search also sucks get out of
           site.
-        </h1>
+        </h2>
       </main>
     );
   }

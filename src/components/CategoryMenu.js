@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-function CategoryMenu({ selectedCategory="popular", setSelectedCategory }) {
-
+function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
   // const [popularToggle, setPopularToggle] = useState(true);
   // const [topRatedToggle, setTopRatedToggle] = useState(false);
   // const [upcomingToggle, setUpcomingToggle] = useState(false);
@@ -11,16 +10,21 @@ function CategoryMenu({ selectedCategory="popular", setSelectedCategory }) {
 
   const [categoryName, setCategoryName] = useState("Popular");
 
-
   return (
-    <div className={ dropdownToggle ? "categoryMenu toggled" : "categoryMenu"}>
-      <button 
+    <div className={dropdownToggle ? "categoryMenu toggled" : "categoryMenu"}>
+      <button
         className="currentCategory"
-        onClick={() => { 
+        onClick={() => {
           dropdownToggle ? setDropdownToggle(false) : setDropdownToggle(true);
-         }}>
+        }}
+      >
         <h1>{categoryName}</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+        >
           <title>Dropdown arrow icon</title>
           <path d="M2 9L12 15L22 9"></path>
         </svg>

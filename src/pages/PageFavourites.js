@@ -7,15 +7,24 @@ function PageFavourites() {
   const { favorites } = useContext(GlobalContext);
   console.log(favorites);
 
-  return (
-    <div>
-      <main id="home">
+  if (favorites.length > 0) {
+    return (
+      <main id="favorites">
         {favorites.map((favorite, index) => (
           <MovieCard key={favorite.id} movieData={favorite} />
         ))}
       </main>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <main id="favorites">
+        <h2>
+          Currently you have no favourited movies, try picking some you like an
+          you will see it here.
+        </h2>
+      </main>
+    );
+  }
 }
 
 export default PageFavourites;

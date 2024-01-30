@@ -59,7 +59,6 @@ function PageHome() {
   //       console.log(error);
   //     });
   // }, []);
-
   return (
     <main id="home">
       {popularMovies.length > 0 && (
@@ -80,10 +79,7 @@ function PageHome() {
         <MoviesContainer title="Upcoming" moviesData={upcomingMovies} />
       )}
       {selectedCategory === "now-playing" && (
-        <MoviesContainer
-          title="Now Playing"
-          moviesData={nowPlayingMovies}
-        />
+        <MoviesContainer title="Now Playing" moviesData={nowPlayingMovies} />
       )}
     </main>
   );
