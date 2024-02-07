@@ -9,6 +9,11 @@
   .banner-img img {
     object-position: 0 10%;
   }
+
+  .no-poster {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
 }
 
 .movie-page-main {
@@ -22,9 +27,11 @@
 
 .rating-and-favourite {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1rem;
   align-items: center;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 div.rating-bar {
@@ -188,6 +195,7 @@ div.rating-bar {
       gap: 2rem;
       margin-bottom: 0;
       margin-left: 1rem;
+      justify-content: space-between;
     }
 
     .movie-title-container {

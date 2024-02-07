@@ -54,6 +54,14 @@ function PageSingleMovie() {
     }
   }
 
+  function hasPosterImg() {
+    if (movieData.poster_path) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <div className="movie-page">
       {/* {console.log("Movie Data: ", movieData)} */}
@@ -80,7 +88,13 @@ function PageSingleMovie() {
                 </div>
               )}
 
-              <div className="single-movie-text">
+              <div
+                className={
+                  hasPosterImg()
+                    ? "single-movie-text"
+                    : "single-movie-text no-poster"
+                }
+              >
                 <div className="movie-title-container">
                   <h1 className="movie-title">{movieData.title}</h1>
                   <div className="rating-and-favourite">

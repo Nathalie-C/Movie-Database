@@ -66,7 +66,7 @@ function MovieCard({ movieData = defaultData }) {
             {movieData.vote_average ? (
               <p>{movieData.vote_average.toFixed(1)}</p>
             ) : (
-              <p>N&sol;A</p>
+              <p>NR</p>
             )}
           </div>
           <FavouriteButton movieData={movieData} />

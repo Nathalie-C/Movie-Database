@@ -22,7 +22,7 @@ function PageFavourites() {
     return (
       <main id="favorites" className="fav-none">
         <h2>
-          Currently you have no favourited movies, try picking some you like an
+          Currently you have no favourited movies, try picking some you like and
           you will see it here.
         </h2>
       </main>
