@@ -55,8 +55,8 @@ footer {
     fill: $pri-li;
   }
 
-  footer .footer-logo-group:visited {
-    font-weight: unset;
+  .footer-logo-group:focus {
+    outline: none;
   }
 
   .copyright p {
