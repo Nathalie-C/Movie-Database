@@ -11,8 +11,7 @@
   }
 
   .no-poster {
-    margin-left: 0;
-    margin-bottom: 1rem;
+    margin: 2rem 0 1rem auto;
   }
 }
 
@@ -152,6 +151,7 @@ div.rating-bar {
 @include mq($medium-mq) {
   .movie-page {
     position: relative;
+
     .poster-carrier {
       position: absolute;
       position: relative;
@@ -207,6 +207,10 @@ div.rating-bar {
     .movie-title {
       margin-bottom: 0;
     }
+
+    .no-poster {
+      margin-left: 0;
+    }
   }
 }
 
@@ -227,10 +231,13 @@ div.rating-bar {
     .single-movie-text {
       margin-left: 2rem;
     }
+
+    .no-poster {
+      margin-left: 0;
+      margin-bottom: 3rem;
+    }
   }
 }
-
-// 1280px
 
 // 1600px
 @include mq(1600px) {
@@ -274,6 +281,10 @@ div.rating-bar {
         font-size: 3rem;
       }
     }
+
+    .no-poster {
+      margin-left: 0;
+    }
   }
 }
 
@@ -302,6 +313,10 @@ div.rating-bar {
       .movie-title {
         font-size: 3.5rem;
       }
+    }
+
+    .no-poster {
+      margin-left: 0;
     }
   }
 }
