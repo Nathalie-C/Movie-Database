@@ -2,7 +2,7 @@ import { IMAGE_URL_BASE } from "../utilities/api";
 import { formatReleaseDate } from "../utilities/toolbelt";
 import { Link, useNavigate } from "react-router-dom";
 import FavouriteButton from "./FavoriteButton";
-import castErrorImg from "../images/cast-error-img.webp";
+import ErrorImg from "../images/poster-error-img.webp";
 
 const defaultData = {
   adult: false,
@@ -40,7 +40,7 @@ function MovieCard({ movieData = defaultData }) {
         onError={(e) => {
           let currentTarget = e.currentTarget;
           currentTarget.onerror = null; // prevents looping
-          currentTarget.src = castErrorImg;
+          currentTarget.src = ErrorImg;
         }}
       />
       <div className="movie-info">
