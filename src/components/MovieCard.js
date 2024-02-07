@@ -1,6 +1,6 @@
 import { IMAGE_URL_BASE } from "../utilities/api";
 import { formatReleaseDate } from "../utilities/toolbelt";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FavouriteButton from "./FavoriteButton";
 const defaultData = {
   adult: false,
@@ -44,11 +44,11 @@ function MovieCard({ movieData = defaultData }) {
         </div>
         {movieData.overview ? (
           <p>
-            {movieData.overview.trim().substring(0, 80)}... <a>More</a>
+            {movieData.overview.trim().substring(0, 80)}... <Link>More</Link>
           </p>
         ) : (
           <p>
-            No Description Available <a>More</a>
+            No Description Available <Link>More</Link>
           </p>
         )}
         <div className="card-icons">
