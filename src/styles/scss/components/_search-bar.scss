@@ -12,14 +12,15 @@
 }
 
 .search input {
-  display: none;
   color: $light;
   background-color: $dark;
   height: 2.875rem;
-  min-width: 12rem;
+  width: 3rem;
   border: 0.125rem solid $light;
   border-radius: 2rem;
   padding: 0.125rem 1rem;
+  transition: all 0.35s ease-in-out;
+  opacity: 0;
 }
 
 .search input:focus {
@@ -36,12 +37,14 @@
 }
 
 .search.toggled input {
-  display: block;
+  width: 12rem;
+  opacity: 1;
 }
 
 //768px
 @include mq($medium-mq) {
   .search input {
-    display: block;
+    width: 12rem;
+    opacity: 1;
   }
 }

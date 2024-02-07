@@ -2,6 +2,8 @@ import { IMAGE_URL_BASE } from "../utilities/api";
 import { formatReleaseDate } from "../utilities/toolbelt";
 import { Link, useNavigate } from "react-router-dom";
 import FavouriteButton from "./FavoriteButton";
+import castErrorImg from "../images/cast-error-img.webp";
+
 const defaultData = {
   adult: false,
   backdrop_path: "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
@@ -32,7 +34,15 @@ function MovieCard({ movieData = defaultData }) {
       }}
       className="movie-card"
     >
-      <img src={imagePath} alt={movieData.title} />
+      <img
+        src={imagePath}
+        alt={movieData.title}
+        onError={(e) => {
+          let currentTarget = e.currentTarget;
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src = castErrorImg;
+        }}
+      />
       <div className="movie-info">
         <div className="title-and-release">
           <h3 className="title">{movieData.title}</h3>
