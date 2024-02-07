@@ -86,9 +86,7 @@ function PageSingleMovie() {
                   <div className="rating-and-favourite">
                     <div className="rating-bar">
                       {movieData.vote_average ? (
-                        <p>
-                          {movieData.vote_average.toFixed(1).replace(".", "")}%
-                        </p>
+                        <p>{movieData.vote_average.toFixed(1)}</p>
                       ) : (
                         <p>NR</p>
                       )}

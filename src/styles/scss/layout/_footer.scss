@@ -19,14 +19,14 @@ footer {
     text-transform: uppercase;
   }
 
-  .footer-nav ul a:focus,
-  .footer-nav ul a:visited {
+  .footer-nav a:focus,
+  .footer-nav a:visited {
     outline: none;
     background-color: transparent;
   }
 
-  .footer-nav ul a:hover,
-  .footer-nav ul a:active {
+  .footer-nav a:hover,
+  .footer-nav a:active {
     outline: 0.125rem solid $pri;
     background-color: $pri;
   }
