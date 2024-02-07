@@ -1,42 +1,47 @@
-@use '../utilities' as *;
+@use "../utilities" as *;
 
 .search label {
-    display: none;
+  display: none;
 }
 
 .search form {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
 }
 
 .search input {
-    display: none;
-    color: $light;
-    background-color: $dark;
-    height: 2.875rem;
-    min-width: 12rem;
-    border: 0.125rem solid $light;
-    border-radius: 2rem;
-    padding: 0.125rem 1rem;
+  display: none;
+  color: $light;
+  background-color: $dark;
+  height: 2.875rem;
+  min-width: 12rem;
+  border: 0.125rem solid $light;
+  border-radius: 2rem;
+  padding: 0.125rem 1rem;
 }
 
 .search input:focus {
-    outline: 0.125rem solid $pri;
-    outline-offset: -0.1875rem;
+  outline: 0.125rem solid $pri;
+  outline-offset: -0.1875rem;
 }
 
 .search button {
-    position: absolute;
+  position: absolute;
+}
+
+.search svg path:hover {
+  stroke: $pri;
 }
 
 .search.toggled input {
-    display: block;
+  display: block;
 }
 
+//768px
 @include mq($medium-mq) {
-    .search input {
-        display: block;
-    }
+  .search input {
+    display: block;
+  }
 }
