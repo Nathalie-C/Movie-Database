@@ -10,14 +10,17 @@ function PageFavourites() {
   if (favorites.length > 0) {
     return (
       <main id="favorites">
-        {favorites.map((favorite, index) => (
-          <MovieCard key={favorite.id} movieData={favorite} />
-        ))}
+        <h1 className="fav-movie-title">Favorite Movie</h1>
+        <div className="fav-movie-container">
+          {favorites.map((favorite, index) => (
+            <MovieCard key={favorite.id} movieData={favorite} />
+          ))}
+        </div>
       </main>
     );
   } else {
     return (
-      <main id="favorites">
+      <main id="favorites" className="fav-none">
         <h2>
           Currently you have no favourited movies, try picking some you like an
           you will see it here.

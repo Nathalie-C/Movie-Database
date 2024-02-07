@@ -14,17 +14,19 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <GlobalProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<PageHome />} />
-          <Route path="/about" element={<PageAbout />} />
-          <Route path="/movie/:id" element={<PageSingleMovie />} />
-          <Route path="/workshop" element={<WorkShop />} />
-          <Route path="/favourites" element={<PageFavourites />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="/searchResults" element={<SearchResults />} />
-        </Routes>
-        <Footer />
+        <div id="site-wrapper">
+          <Header />
+          <Routes>
+            <Route path="/" element={<PageHome />} />
+            <Route path="/about" element={<PageAbout />} />
+            <Route path="/movie/:id" element={<PageSingleMovie />} />
+            <Route path="/workshop" element={<WorkShop />} />
+            <Route path="/favourites" element={<PageFavourites />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/searchResults" element={<SearchResults />} />
+          </Routes>
+          <Footer />
+        </div>
       </GlobalProvider>
     </BrowserRouter>
   );

@@ -1,5 +1,12 @@
-@use '../utilities' as *;
+@use "../utilities" as *;
 
-// main {
-//     padding: 1rem;
-// }
+#site-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  #favorites,
+  #search-results-page {
+    flex-grow: 1;
+  }
+}

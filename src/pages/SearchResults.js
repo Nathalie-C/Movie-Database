@@ -20,7 +20,7 @@ function SearchResults() {
 
   if (searchedMovies.length > 0) {
     return (
-      <main>
+      <main id="search-results-page">
         {console.log("inside the return", searchedMovies)}
         <h1>Search Results</h1>
         <MoviesContainer title="Searched Movies" moviesData={searchedMovies} />
@@ -28,7 +28,7 @@ function SearchResults() {
     );
   } else {
     return (
-      <main>
+      <main id="search-results-page" className="search-error">
         <h2>We cannot find a movie of your search. Please try again.</h2>
       </main>
     );

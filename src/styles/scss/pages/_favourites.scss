@@ -1,1 +1,73 @@
-@use '../utilities' as *;
+@use "../utilities" as *;
+
+#favorites {
+  .fav-movie-title {
+    margin: 1.5rem;
+  }
+
+  .fav-movie-container {
+    margin: 1rem;
+  }
+
+  // 640px
+  @include mq($small-mq) {
+    .fav-movie-title {
+      margin: 2.5rem;
+    }
+
+    .fav-movie-container {
+      margin: 2rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  // 768px
+  @include mq($medium-mq) {
+    .fav-movie-title {
+      margin: 3.5rem;
+    }
+
+    .fav-movie-container {
+      margin: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  // 1280px
+  @include mq($large-mq) {
+    .fav-movie-title {
+      margin: 4.5rem;
+    }
+
+    .fav-movie-container {
+      margin: 4rem;
+    }
+  }
+}
+
+.fav-none {
+  h2 {
+    margin: 3rem 1rem;
+  }
+
+  // 640px
+  @include mq($small-mq) {
+    h2 {
+      margin: 5rem 3rem;
+    }
+  }
+
+  // 768px
+  @include mq($medium-mq) {
+    h2 {
+      margin: 7rem 5rem;
+    }
+  }
+  // 1280px
+  @include mq($large-mq) {
+    h2 {
+      font-size: 2rem;
+      margin: 9rem 7rem;
+    }
+  }
+}
