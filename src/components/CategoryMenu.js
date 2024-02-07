@@ -36,7 +36,7 @@ function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
             setCategoryName("Popular");
             setDropdownToggle(false);
           }}
-          className={selectedCategory == "popular" ? "" : "outline"}
+          className={selectedCategory === "popular" ? "" : "outline"}
         >
           Popular
         </button>
@@ -46,7 +46,7 @@ function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
             setCategoryName("Top Rated");
             setDropdownToggle(false);
           }}
-          className={selectedCategory == "top-rated" ? "" : "outline"}
+          className={selectedCategory === "top-rated" ? "" : "outline"}
         >
           Top Rated
         </button>
@@ -56,7 +56,7 @@ function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
             setCategoryName("Upcoming");
             setDropdownToggle(false);
           }}
-          className={selectedCategory == "upcoming" ? "" : "outline"}
+          className={selectedCategory === "upcoming" ? "" : "outline"}
         >
           Upcoming
         </button>
@@ -66,7 +66,7 @@ function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
             setCategoryName("Now Playing");
             setDropdownToggle(false);
           }}
-          className={selectedCategory == "now-playing" ? "" : "outline"}
+          className={selectedCategory === "now-playing" ? "" : "outline"}
         >
           Now Playing
         </button>
