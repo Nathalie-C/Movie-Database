@@ -17,6 +17,7 @@
 @use "components/movie-card";
 @use "components/movie-grid";
 @use "components/search-bar";
+@use "components/loading-spinner";
 
 // layout
 @use "layout/header";

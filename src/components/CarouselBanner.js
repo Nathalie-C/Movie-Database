@@ -13,7 +13,7 @@ export default function CarouselBanner({ moviesData }) {
       autoPlay={true}
       infiniteLoop={true}
       transitionTime={2500}
-      interval={5000}
+      interval={8000}
     >
       <CarouselSlide movieData={moviesData[0]} />
       <CarouselSlide movieData={moviesData[1]} />

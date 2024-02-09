@@ -33,11 +33,6 @@
   padding: 1rem;
 }
 
-// .movie-info {
-//   display: flex;
-//   flex-direction: column-reverse;
-// }
-
 .movie-card p,
 .movie-card h3{
   margin: 0;
@@ -51,11 +46,12 @@
 
 .movie-info p {
   font-size: 1rem;
+  line-height: 1.25;
 }
 
 .movie-card .title-and-release {
   .title {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
   }
   .release-date {
     font-size: 0.875rem;
@@ -70,11 +66,10 @@
 
 .movie-card button.favourite {
   grid-row: 3;
-
   opacity: 1;
-  background-color: black;
   transition: all 0.2s ease-in-out;
 }
+
 
 .movie-card:hover {
   img {

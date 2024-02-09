@@ -6,20 +6,20 @@ function SearchBar() {
   const [windowWidth, setWindowWidth] = useState(0);
   const navigate = useNavigate();
 
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-    if (window.innerWidth >= 768) {
-      setIsOpen(false);
-    }
-  };
+  // const handleResize = () => {
+  //   setWindowWidth(window.innerWidth);
+  //   if (window.innerWidth >= 768) {
+  //     setIsOpen(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
   // console.log("windowWidth: ", windowWidth);
 
   function handleSubmit(e) {
@@ -27,23 +27,28 @@ function SearchBar() {
     const result = e.target[0].value;
     console.log("Result:", result);
 
-    if (windowWidth < 768) {
-      if (isOpen === false) {
-        setIsOpen(true);
-      } else if (isOpen === true && result !== "") {
-        navigate(`/searchResults?query=${result}`);
-      }
-    } else {
-      navigate(`/searchResults?query=${result}`);
-    }
+    navigate(`/searchResults?query=${result}`);
+
+
+    // if (windowWidth < 768) {
+    //   if (isOpen === false) {
+    //     setIsOpen(true);
+    //   } else if (isOpen === true && result !== "") {
+    //     navigate(`/searchResults?query=${result}`);
+    //   }
+    // } else {
+    //   navigate(`/searchResults?query=${result}`);
+    // }
   }
   // console.log("isOpen", isOpen);
 
   return (
-    <div className={isOpen ? "search toggled" : "search untoggled"}>
+    <div className="search"
+    // {isOpen ? "search toggled" : "search untoggled"}
+    >
       <form action="/search" method="get" onSubmit={handleSubmit}>
         <label htmlFor="search-text">Search for Movie</label>
-        <input type="text" placeholder="Search..." name="search" />
+        <input type="text" placeholder="Search..." name="search" id="search-text"/>
         <button type="submit">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <title>Search icon</title>

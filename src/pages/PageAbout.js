@@ -3,10 +3,10 @@ import aboutImg from "../images/gumdrops.jpg";
 
 export default function PageAbout() {
   return (
-    <div className="about">
+    <main className= "about">
       <Banner src={aboutImg} alt="banner image of gumdrops" />
-      <main className="about-text">
-        <h1 className="about-heading">guMDrop</h1>
+      <section className="about-text">        
+      <h1 className="about-heading">guMDrop</h1>
         <h2>The sweetest way to find movies!</h2>
         <p>
           guMDrop is a movie database that helps you find the perfect movie for
@@ -16,12 +16,12 @@ export default function PageAbout() {
           recommendations based on your preferences. Let’s satisfy that sweet
           tooth with a great movie!
         </p>
-
         <p>
           This product uses the TMDb API but is not endorsed or certified by
           TMDb.
         </p>
+        </section>
+
       </main>
-    </div>
   );
 }

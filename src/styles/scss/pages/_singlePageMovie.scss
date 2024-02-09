@@ -78,7 +78,7 @@ div.rating-bar {
   .cast-gradient {
     width: 10%;
     height: 100%;
-    background-image: linear-gradient(to left, #000000, transparent);
+    background-image: linear-gradient(to left, $dark, transparent);
     position: absolute;
     top: 0;
     left: auto;

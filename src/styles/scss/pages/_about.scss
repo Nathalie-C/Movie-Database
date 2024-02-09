@@ -1,13 +1,13 @@
 @use "../utilities" as *;
 
+
+.about-text{
+  margin: 1rem ;
+}
+
 .about {
   img {
     object-position: 0 40%;
-  }
-
-  .about-text {
-    padding: 1rem;
-    margin: 0 auto;
   }
 
   .about-heading {
@@ -27,6 +27,7 @@
       padding: 2rem 7rem 3rem 7rem;
     }
   }
+
 
   // 1280px
   @include mq($large-mq) {
