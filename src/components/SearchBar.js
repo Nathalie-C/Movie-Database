@@ -20,7 +20,7 @@ function SearchBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log("windowWidth: ", windowWidth);
+  // console.log("windowWidth: ", windowWidth);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -37,7 +37,7 @@ function SearchBar() {
       navigate(`/searchResults?query=${result}`);
     }
   }
-  console.log("isOpen", isOpen);
+  // console.log("isOpen", isOpen);
 
   return (
     <div className={isOpen ? "search toggled" : "search untoggled"}>
