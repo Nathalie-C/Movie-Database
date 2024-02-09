@@ -8,30 +8,38 @@
     color: $pri;
   }
 
-  h2 {
-    padding-bottom: 3rem;
+  .error-text {
+    margin-bottom: 3rem;
+  }
+
+  .error-retry-button {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
 
   // 640px
   @include mq($small-mq) {
     padding-top: 1.5rem;
 
-    h2 {
-      padding-bottom: 4.5rem;
+    .error-retry-button,
+    .error-text {
+      margin-bottom: 4.5rem;
     }
   }
 
   // 768px
   @include mq($medium-mq) {
     padding-top: 0;
-    h2 {
-      padding-bottom: 8rem;
+    .error-retry-button,
+    .error-text {
+      margin-bottom: 8rem;
     }
   }
   // 1280px
   @include mq($large-mq) {
-    h2 {
-      padding-bottom: 14rem;
+    .error-retry-button,
+    .error-text {
+      margin-bottom: 14rem;
     }
   }
 }

@@ -21,7 +21,7 @@ function PageHome() {
   useEffect(() => {
     getPopularMovie()
       .then((data) => {
-        setPopularMovies(data.results);
+        setPopularMovies(data.results11);
         // console.log("data: ", data);
       })
       .catch((error) => {
