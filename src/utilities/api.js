@@ -45,7 +45,7 @@ function getTopRated() {
 
 function getUpcoming() {
   return fetch(
-    `${API_ENDPOINT}/movie/upcoming
+    `${API_ENDPOINT}/movie/upcoming?region=US
     `,
     {
       headers: {

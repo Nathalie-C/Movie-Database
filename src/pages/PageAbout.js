@@ -5,7 +5,7 @@ export default function PageAbout() {
   return (
     <div className="about">
       <Banner src={aboutImg} alt="banner image of gumdrops" />
-      <div className="about-text">
+      <main className="about-text">
         <h1 className="about-heading">guMDrop</h1>
         <h2>The sweetest way to find movies!</h2>
         <p>
@@ -21,7 +21,7 @@ export default function PageAbout() {
           This product uses the TMDb API but is not endorsed or certified by
           TMDb.
         </p>
-      </div>
+      </main>
     </div>
   );
 }
