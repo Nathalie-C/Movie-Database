@@ -9,7 +9,6 @@ export default function Nav() {
       className={menuToggle ? "site-navigation toggled" : "site-navigation"}
       id="site-navigation"
     >
-      /* hamburger menu button & svg */
       <button
         className="menu-toggle"
         aria-controls="header-menu"
@@ -31,7 +30,6 @@ export default function Nav() {
           <path d="M2 19h20"></path>
         </svg>
       </button>
-      {/* ul of nav links */}
       <ul className="nav-menu" id="header-menu">
         <li>
           <Link to="/about" onClick={() => setMenuToggle(false)}>

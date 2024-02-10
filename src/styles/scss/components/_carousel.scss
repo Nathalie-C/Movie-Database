@@ -7,7 +7,7 @@
     .carousel-gradient {
       width: 100vw;
       height: 20rem;
-      background-image: linear-gradient(to right, #000000, transparent);
+      background-image: linear-gradient(to right, $dark, transparent);
       position: absolute;
       top: 0;
       left: 0;

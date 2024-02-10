@@ -37,15 +37,9 @@
   stroke: $pri;
 }
 
-// .search.toggled input {
-//   min-width: 10rem;
-//   opacity: 1;
-// }
-
 //768px
 @include mq($medium-mq) {
   .search input {
     width: 12rem;
-    // opacity: 1;
   }
 }

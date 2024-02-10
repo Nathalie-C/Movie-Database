@@ -1,5 +1,11 @@
 @use "../utilities" as *;
 
+.tmdb-logo {
+  width: 5rem;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
 
 .about-text{
   margin: 1rem ;
