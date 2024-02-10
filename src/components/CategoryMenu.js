@@ -1,11 +1,6 @@
 import { useState } from "react";
 
 function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
-  // const [popularToggle, setPopularToggle] = useState(true);
-  // const [topRatedToggle, setTopRatedToggle] = useState(false);
-  // const [upcomingToggle, setUpcomingToggle] = useState(false);
-  // const [nowPlayingToggle, setNowPlayingToggle] = useState(false);
-
   const [dropdownToggle, setDropdownToggle] = useState(false);
 
   const [categoryName, setCategoryName] = useState("Popular");

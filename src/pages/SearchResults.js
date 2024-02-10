@@ -21,7 +21,6 @@ function SearchResults() {
   if (searchedMovies.length > 0) {
     return (
       <main id="search-results-page">
-        {console.log("inside the return", searchedMovies)}
         <h1>Search Results</h1>
         <MoviesContainer title="Searched Movies" moviesData={searchedMovies} />
       </main>

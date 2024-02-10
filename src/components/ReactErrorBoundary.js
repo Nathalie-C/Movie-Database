@@ -7,7 +7,6 @@ export default function ReactErrorBoundary(props) {
     <ErrorBoundary
       FallbackComponent={ErrorPage}
       onError={(error, errorInfo) => {
-        // log the error
         console.log("Error caught!");
         console.error(error);
         console.error(errorInfo);

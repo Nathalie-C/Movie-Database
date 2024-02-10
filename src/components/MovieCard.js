@@ -24,7 +24,6 @@ const defaultData = {
 
 function MovieCard({ movieData = defaultData }) {
   const imagePath = `${IMAGE_URL_BASE}/w185${movieData.poster_path}`;
-  // const imagePath = `${IMAGE_URL_BASE}/w342${movieData.poster_path}`;
   const navigate = useNavigate();
 
   return (

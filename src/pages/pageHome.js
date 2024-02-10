@@ -15,6 +15,7 @@ function PageHome() {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const [selectedCategory, setSelectedCategory] = useState("popular");
 
@@ -22,64 +23,70 @@ function PageHome() {
     getPopularMovie()
       .then((data) => {
         setPopularMovies(data.results);
-        // console.log("data: ", data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
     getTopRated()
       .then((data) => {
         setTopRatedMovies(data.results);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
     getUpcoming()
       .then((data) => {
         setUpcomingMovies(data.results);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
     getNowPlaying()
       .then((data) => {
         setNowPlayingMovies(data.results);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
   }, []);
 
-  // useEffect(() => {
-  //   getTopRated()
-  //     .then((data) => {
-  //       setTopRated(data.results);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
   return (
     <main id="home">
-      {popularMovies.length > 0 && (
-        <CarouselBanner moviesData={popularMovies} />
-      )}
-
-      <CategoryMenu
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-      {selectedCategory === "popular" && (
-        <MoviesContainer title="Popular" moviesData={popularMovies} />
-      )}
-      {selectedCategory === "top-rated" && (
-        <MoviesContainer title="Top Rated" moviesData={topRatedMovies} />
-      )}
-      {selectedCategory === "upcoming" && (
-        <MoviesContainer title="Upcoming" moviesData={upcomingMovies} />
-      )}
-      {selectedCategory === "now-playing" && (
-        <MoviesContainer title="Now Playing" moviesData={nowPlayingMovies} />
+      {loading == false ? (
+        <>
+          {popularMovies.length > 0 && (
+            <CarouselBanner moviesData={popularMovies} />
+          )}
+          <CategoryMenu
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+          {selectedCategory === "popular" && (
+            <MoviesContainer title="Popular" moviesData={popularMovies} />
+          )}
+          {selectedCategory === "top-rated" && (
+            <MoviesContainer title="Top Rated" moviesData={topRatedMovies} />
+          )}
+          {selectedCategory === "upcoming" && (
+            <MoviesContainer title="Upcoming" moviesData={upcomingMovies} />
+          )}
+          {selectedCategory === "now-playing" && (
+            <MoviesContainer
+              title="Now Playing"
+              moviesData={nowPlayingMovies}
+            />
+          )}
+        </>
+      ) : (
+        <div className="spinner"></div>
       )}
     </main>
   );

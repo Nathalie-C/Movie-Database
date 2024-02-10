@@ -6,8 +6,8 @@
   height: 40px;
   border-radius: 50%;
   border-left-color: $pri;
-
   animation: spin 1s ease infinite;
+  margin: 50vh auto;
 }
 
 @keyframes spin {

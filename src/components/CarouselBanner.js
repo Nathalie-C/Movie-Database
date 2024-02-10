@@ -5,7 +5,6 @@ import { Carousel } from "react-responsive-carousel";
 import CarouselSlide from "./CarouselSlide";
 
 export default function CarouselBanner({ moviesData }) {
-  // console.log("Pop1: ", moviesData);
   return (
     <Carousel
       showThumbs={false}
