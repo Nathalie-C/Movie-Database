@@ -6,7 +6,15 @@ This was coded by Arielle Marin, John Sustituido, and Nathalie Chang as a part o
 
 ## Scripts
 
+To run Sass, you can run from the root folder:
+
+### `sass --watch src/styles/scss:src/styles/css`
+
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the required node modules to run the app.
 
 ### `npm start`
 
@@ -15,3 +23,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+Prior to running `npm start`, ensure that you have a .env file present in the root folder.
