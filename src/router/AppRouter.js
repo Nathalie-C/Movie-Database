@@ -13,7 +13,7 @@ import ReactErrorBoundary from "../components/ReactErrorBoundary";
 function AppRouter() {
   return (
     <ReactErrorBoundary>
-      <BrowserRouter>
+      <BrowserRouter basename="movie-database">
         <GlobalProvider>
           <div id="site-wrapper">
             <Header />

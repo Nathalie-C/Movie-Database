@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/movie-database/static/css/main.6552ecf4.css",
+    "main.js": "/movie-database/static/js/main.2259ea79.js",
+    "static/js/787.d743d556.chunk.js": "/movie-database/static/js/787.d743d556.chunk.js",
+    "static/media/gumdrops.jpg": "/movie-database/static/media/gumdrops.044f8d3e9d2f48ef30f2.jpg",
+    "static/media/errorImg.webp": "/movie-database/static/media/errorImg.ec038dd21af305d50cb6.webp",
+    "static/media/cast-error-img.webp": "/movie-database/static/media/cast-error-img.167cad5ce3af04738dee.webp",
+    "static/media/poster-error-img.webp": "/movie-database/static/media/poster-error-img.e7e382f7b70f1e0b3b2f.webp",
+    "static/media/tmdb-logo.svg": "/movie-database/static/media/tmdb-logo.de1a664e8d0777ca4ddb2a5a298bcfb6.svg",
+    "index.html": "/movie-database/index.html",
+    "main.6552ecf4.css.map": "/movie-database/static/css/main.6552ecf4.css.map",
+    "main.2259ea79.js.map": "/movie-database/static/js/main.2259ea79.js.map",
+    "787.d743d556.chunk.js.map": "/movie-database/static/js/787.d743d556.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6552ecf4.css",
+    "static/js/main.2259ea79.js"
+  ]
+}
