@@ -10,8 +10,6 @@ function SearchBar() {
     setWindowWidth(window.innerWidth);
     if (window.innerWidth >= 768) {
       setIsOpen(true);
-    } else {
-      setIsOpen(false);
     }
   };
 
