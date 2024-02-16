@@ -137,12 +137,12 @@ div.rating-bar {
 }
 
 .movie-videos {
-  border: 3px solid $pri;
-  aspect-ratio: 16 / 9;
-  position: relative;
+  // border: 3px solid $pri;
+  // position: relative;
 }
 .movie-videos iframe {
-  position: absolute;
+  aspect-ratio: 16 / 9;
+  // position: absolute;
   width: 100%;
   height: 100%;
 }
