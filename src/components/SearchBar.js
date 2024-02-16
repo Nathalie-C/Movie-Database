@@ -2,17 +2,49 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
   const navigate = useNavigate();
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+    if (window.innerWidth >= 768) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  console.log("windowWidth: ", windowWidth);
 
   function handleSubmit(e) {
     e.preventDefault();
     const result = e.target[0].value;
     console.log("Result:", result);
 
-    navigate(`/searchResults?query=${result}`);
+    // navigate(`/searchResults?query=${result}`);
+
+    if (windowWidth < 768) {
+      if (isOpen === false) {
+        setIsOpen(true);
+      } else if (isOpen === true && result !== "") {
+        navigate(`/searchResults?query=${result}`);
+      }
+    } else if (windowWidth >= 768 && result !== "") {
+      navigate(`/searchResults?query=${result}`);
+    }
   }
+  console.log("isOpen", isOpen);
+
   return (
-    <div className="search">
+    <div className={isOpen ? "search toggled" : "search"}>
       <form action="/search" method="get" onSubmit={handleSubmit}>
         <label htmlFor="search-text">Search for Movie</label>
         <input

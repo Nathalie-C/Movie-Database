@@ -5,7 +5,7 @@ import MovieCard from "../components/MovieCard";
 
 function PageFavourites() {
   const { favorites } = useContext(GlobalContext);
-  console.log(favorites);
+  // console.log(favorites);
 
   if (favorites.length > 0) {
     return (

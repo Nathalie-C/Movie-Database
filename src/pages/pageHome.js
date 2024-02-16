@@ -24,6 +24,7 @@ function PageHome() {
       .then((data) => {
         setPopularMovies(data.results);
         setLoading(false);
+        // console.log("data", data);
       })
       .catch((error) => {
         console.log(error);
@@ -60,7 +61,7 @@ function PageHome() {
 
   return (
     <main id="home">
-      {loading == false ? (
+      {loading === false ? (
         <>
           {popularMovies.length > 0 && (
             <CarouselBanner moviesData={popularMovies} />

@@ -1,5 +1,5 @@
 const API_TOKEN = process.env.REACT_APP_TMDB_TOKEN;
-console.log(API_TOKEN);
+// console.log(API_TOKEN);
 const API_ENDPOINT = "https://api.themoviedb.org/3";
 const IMAGE_URL_BASE = "https://image.tmdb.org/t/p";
 

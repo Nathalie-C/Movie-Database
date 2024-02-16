@@ -19,9 +19,9 @@
   border: 0.125rem solid $light;
   border-radius: 2rem;
   padding: 0.125rem 1rem;
-  transition: all 0.35s ease-in-out;
-  opacity: 1;
-  min-width: 10rem;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  // min-width: 10rem;
 }
 
 .search input:focus {
@@ -37,9 +37,14 @@
   stroke: $pri;
 }
 
+.search.toggled input {
+  width: 12rem;
+  opacity: 1;
+}
+
 //768px
 @include mq($medium-mq) {
   .search input {
-    width: 12rem;
+    // width: 12rem;
   }
 }
