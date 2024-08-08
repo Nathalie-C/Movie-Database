@@ -69,10 +69,17 @@ div.rating-bar {
   margin-bottom: 0.6rem;
 }
 
-.movie-page p {
-  margin-bottom: 0.3rem;
-  margin-top: 0.3rem;
+.movie-page {
+  p {
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+  }
+
+  .cast-container-instruction {
+    margin-bottom: 1rem;
+  }
 }
+
 .cast-overlay-container {
   position: relative;
   .cast-gradient {
@@ -136,10 +143,6 @@ div.rating-bar {
   font-size: 1rem;
 }
 
-.movie-videos {
-  // border: 3px solid $pri;
-  // position: relative;
-}
 .movie-videos iframe {
   aspect-ratio: 16 / 9;
   // position: absolute;

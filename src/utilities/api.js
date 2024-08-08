@@ -129,6 +129,42 @@ function getMovieBySearch(query) {
     });
 }
 
+function getListOfGenre() {
+  return fetch(`${API_ENDPOINT}/genre/movie/list`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
+function getMovieByGenre(genreID) {
+  return fetch(`${API_ENDPOINT}/discover/movie?with_genres=${genreID}`, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${API_TOKEN}`,
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not OK");
+      }
+      return response.json();
+    })
+    .catch((error) => {
+      throw error;
+    });
+}
+
 export {
   getPopularMovie,
   IMAGE_URL_BASE,
@@ -137,4 +173,6 @@ export {
   getUpcoming,
   getNowPlaying,
   getMovieBySearch,
+  getListOfGenre,
+  getMovieByGenre,
 };

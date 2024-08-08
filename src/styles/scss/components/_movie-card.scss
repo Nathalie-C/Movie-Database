@@ -8,6 +8,29 @@
   height: max-content;
   width: 11.5625rem;
   margin: 0.625rem;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  &-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-text {
+      line-height: 0;
+    }
+
+    &-icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
 }
 
 .movie-card img {
@@ -29,7 +52,7 @@
 }
 
 .movie-card p,
-.movie-card h3{
+.movie-card h3 {
   margin: 0;
 }
 
@@ -65,15 +88,16 @@
   transition: all 0.2s ease-in-out;
 }
 
-
 .movie-card:hover {
   img {
     opacity: 0.2;
   }
+
   .movie-info,
   .title-and-release,
   .vote-average,
-  button.favorite {
+  button.favorite,
+  .movie-card-rating-icon {
     opacity: 1;
   }
 }

@@ -1,74 +1,115 @@
-@use '../utilities' as *;
+@use "../utilities" as *;
 
+.home-filter {
+  display: flex;
+}
 // .outline = not selected
+.filter-tab-section {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1.5rem;
+
+  .filter-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &-box {
+    // display: flex;
+
+    &-top {
+      display: flex;
+      gap: 2rem;
+      border: 5px solid $pri;
+
+      h2 {
+        margin: 0;
+      }
+    }
+  }
+
+  &-button {
+    button {
+      border-width: 2px;
+      border-color: $pri;
+      background-color: transparent;
+      border: solid;
+    }
+  }
+}
 
 .currentCategory {
-    background-color: transparent;
-    text-transform: none;
-    text-align: left;
-    border-radius: 0;
-    border-bottom: 0.125rem solid $sec;
-    min-width: 10rem;
-    padding: 0;
-    margin: 1rem 1rem 0 1rem;
-    display: flex;
+  background-color: transparent;
+  text-transform: none;
+  text-align: left;
+  border-radius: 0;
+  border-bottom: 0.125rem solid $sec;
+  //   min-width: 10rem;
+  padding: 0;
+  //   margin: 1rem 1rem 0 1rem;
+  //   display: flex;
+  //   align-items: center;
+  //   gap: 0.7rem;
 }
 
-button.currentCategory:hover ,
-button.currentCategory:focus  
-{
-    background-color: transparent;
+button.currentCategory:hover,
+button.currentCategory:focus {
+  background-color: transparent;
 }
 
-.currentCategory h1{
-    margin: 0 1rem 0.25rem 0;
+.currentCategory h1 {
+  margin: 0 1rem 0.25rem 0;
 }
 
-.dropdownContainer{
-    display: none;
-    background-color: $sec;
-    padding: 0.5rem 0;
-    margin: 0 1rem;
-    text-align: right;
-    z-index: 90; 
-    right:0;
-    top: 4rem;
+.dropdownContainer {
+  display: none;
+  background-color: $sec;
+  padding: 0.5rem 0;
+  margin: 0 1rem;
+  text-align: right;
+  z-index: 90;
+  right: 0;
+  top: 4rem;
+
+  &-list {
+    list-style: none;
+  }
 }
 
-.categoryMenu.toggled .dropdownContainer{
-    display: flex;
-    flex-direction: column;
+.categoryMenu.toggled .dropdownContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdownContainer button.outline {
-    outline: none;
+  outline: none;
 }
 
 @include mq($medium-mq) {
-    .currentCategory {
-        display: none;
-    }
-    .categoryMenu.toggled .dropdownContainer{
-        flex-direction: row;
-    }
+  .currentCategory {
+    display: none;
+  }
+  .categoryMenu.toggled .dropdownContainer {
+    flex-direction: row;
+  }
 
-    .dropdownContainer {
-        display: flex;
-        background-color: $sec;
-        padding: 1rem;
-        margin: 1rem auto;
-        display: block;
-        width: max-content;
-        border-radius: 0.5rem;
-    }
-    
-    .dropdownContainer button {
-        margin: 0 0.5rem;
-        min-width: 10rem;
-    }
+  .dropdownContainer {
+    display: flex;
+    background-color: $sec;
+    padding: 1rem;
+    margin: 1rem auto;
+    display: block;
+    width: max-content;
+    border-radius: 0.5rem;
+  }
 
-    .dropdownContainer button.outline {
-        outline: 0.25rem solid $pri;
-        outline-offset: -0.25rem;
-    }
+  .dropdownContainer button {
+    margin: 0 0.5rem;
+    min-width: 10rem;
+  }
+
+  .dropdownContainer button.outline {
+    outline: 0.25rem solid $pri;
+    outline-offset: -0.25rem;
+  }
 }

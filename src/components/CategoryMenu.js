@@ -1,31 +1,87 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import FilterDropdown from "./FilterDropdown";
+import FilterTab from "./FilterTab";
+import filterIcon from "../images/filter_icon.svg";
 
-function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
+function CategoryMenu({
+  // selectedCategory = "popular",
+  // setSelectedCategory,
+  sendDataToParent,
+  listOfGenres,
+}) {
   const [dropdownToggle, setDropdownToggle] = useState(false);
+  const [dataFromFilterDropdown, setDataFromFilterDropdown] = useState([]);
+  const [tabType, setTabType] = useState("");
+  // const [categoryData, setCategoryData] = useState("");
+  // const [genreData, setGenreData] = useState("");
+  const [selected, setSelected] = useState("Popular");
 
-  const [categoryName, setCategoryName] = useState("Popular");
+  const listCategory = ["Popular", "Top Rated", "Upcoming", "Now Playing"];
+
+  function handleDataFromTab(data) {
+    setTabType(data);
+    setDropdownToggle(true);
+    // console.log("set tab data:", data);
+  }
+
+  function handleDataFromFilterDropdown(data) {
+    // console.log("dataID:", data.length);
+    // console.log("dataID's data:", data);
+
+    let select = "";
+    if (data.length === 2) {
+      select = data[1];
+    } else {
+      select = data;
+    }
+    setSelected(select);
+    setDataFromFilterDropdown(data);
+    sendDataToParent(data);
+    setDropdownToggle(false);
+
+    // console.log("set dropdown data:", data);
+  }
+
+  // useEffect(() => {
+  //   if (dataFromFilterDropdown.length === 2) {
+  //     selected = dataFromFilterDropdown[1];
+  //   } else if (dataFromFilterDropdown.length === 1) {
+  //     selected = dataFromFilterDropdown[0];
+  //   }
+  // }, [dataFromFilterDropdown]);
+
+  // if (dataFromFilterDropdown[0] === "category") {
+  //   catValue = dataFromFilterDropdown[1];
+  // } else if (dataFromFilterDropdown[0] === "genre") {
+  //   genValue = dataFromFilterDropdown[1];
+  //   console.log("genValue:", genValue);
+  // }
 
   return (
     <div className={dropdownToggle ? "categoryMenu toggled" : "categoryMenu"}>
-      <button
-        className="currentCategory"
-        onClick={() => {
-          dropdownToggle ? setDropdownToggle(false) : setDropdownToggle(true);
-        }}
-      >
-        <h1>{categoryName}</h1>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="36"
-          height="36"
-          viewBox="0 0 24 24"
-        >
-          <title>Dropdown arrow icon</title>
-          <path d="M2 9L12 15L22 9"></path>
-        </svg>
-      </button>
+      <div className="filter-tab-section">
+        <img src={filterIcon} alt="filter icon" className="filter-icon" />
+        <div className="filter-tab-section-box">
+          <div className="filter-tab-section-box-top">
+            <FilterTab type="Category" sendDataToParent={handleDataFromTab} />
+            <FilterTab type="Genre" sendDataToParent={handleDataFromTab} />
+          </div>
+          {/* selected filter */}
+          <div>
+            <p>{selected}</p>
+          </div>
+        </div>
+      </div>
       <div className="dropdownContainer">
-        <button
+        <ul className="dropdownContainer-list">
+          <FilterDropdown
+            tabType={tabType}
+            listCategory={listCategory}
+            listGenre={listOfGenres}
+            sendDataToParent={handleDataFromFilterDropdown}
+          />
+        </ul>
+        {/* <button
           onClick={() => {
             setSelectedCategory("popular");
             setCategoryName("Popular");
@@ -64,7 +120,7 @@ function CategoryMenu({ selectedCategory = "popular", setSelectedCategory }) {
           className={selectedCategory === "now-playing" ? "" : "outline"}
         >
           Now Playing
-        </button>
+        </button> */}
       </div>
     </div>
   );

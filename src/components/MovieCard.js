@@ -3,6 +3,7 @@ import { formatReleaseDate } from "../utilities/toolbelt";
 import { Link, useNavigate } from "react-router-dom";
 import FavouriteButton from "./FavoriteButton";
 import ErrorImg from "../images/poster-error-img.webp";
+import star from "../images/star_icon.svg";
 
 const defaultData = {
   adult: false,
@@ -42,6 +43,7 @@ function MovieCard({ movieData = defaultData }) {
           currentTarget.src = ErrorImg;
         }}
       />
+      {/* overlay */}
       <div className="movie-info">
         <div className="title-and-release">
           <h3 className="title">{movieData.title}</h3>
@@ -69,6 +71,24 @@ function MovieCard({ movieData = defaultData }) {
             )}
           </div>
           <FavouriteButton movieData={movieData} />
+        </div>
+      </div>
+      {/* info */}
+      <div className="movie-card-info">
+        <h3 className="title">{movieData.title}</h3>
+        <div className="movie-card-rating">
+          <img
+            src={star}
+            alt="a start rating icon"
+            className="movie-card-rating-icon"
+          />
+          {movieData.vote_average ? (
+            <p className="movie-card-rating-text">
+              {movieData.vote_average.toFixed(1)}
+            </p>
+          ) : (
+            <p className="movie-card-rating-text">N/A</p>
+          )}
         </div>
       </div>
     </div>

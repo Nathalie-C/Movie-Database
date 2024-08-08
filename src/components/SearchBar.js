@@ -20,12 +20,12 @@ function SearchBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log("windowWidth: ", windowWidth);
+  // console.log("windowWidth: ", windowWidth);
 
   function handleSubmit(e) {
     e.preventDefault();
     const result = e.target[0].value;
-    console.log("Result:", result);
+    // console.log("Result:", result);
 
     // navigate(`/searchResults?query=${result}`);
 
@@ -39,7 +39,7 @@ function SearchBar() {
       navigate(`/searchResults?query=${result}`);
     }
   }
-  console.log("isOpen", isOpen);
+  // console.log("isOpen", isOpen);
 
   return (
     <div className={isOpen ? "search toggled" : "search"}>
